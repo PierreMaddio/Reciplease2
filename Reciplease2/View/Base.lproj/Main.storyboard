@@ -12,9 +12,21 @@
         <scene sceneID="g7M-fv-abL">
             <objects>
                 <navigationController id="R3V-gX-QcM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dAd-KJ-GJg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dAd-KJ-GJg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <connections>
                         <segue destination="GGb-Cd-4cE" kind="relationship" relationship="rootViewController" id="AdU-9e-dIU"/>
@@ -27,9 +39,9 @@
         <!--Reciplease-->
         <scene sceneID="CvG-7o-PdI">
             <objects>
-                <viewController id="GGb-Cd-4cE" sceneMemberID="viewController">
+                <viewController id="GGb-Cd-4cE" customClass="SearchRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ux8-Wi-HK5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="QF6-Vp-BXo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
