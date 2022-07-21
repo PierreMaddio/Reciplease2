@@ -1,12 +1,13 @@
 //
-//  SearchRecipesViewController.swift
+//  FavoritesRecipesViewController.swift
 //  Reciplease2
 //
-//  Created by Pierre on 19/07/2022.
+//  Created by Pierre on 21/07/2022.
 //
+
 import UIKit
 
-class SearchRecipesViewController: UIViewController {
+class FavoritesRecipesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -14,6 +15,7 @@ class SearchRecipesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
     /*
     // MARK: - Navigation
 
