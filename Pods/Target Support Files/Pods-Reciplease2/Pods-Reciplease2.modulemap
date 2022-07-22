@@ -1,0 +1,6 @@
+framework module Pods_Reciplease2 {
+  umbrella header "Pods-Reciplease2-umbrella.h"
+
+  export *
+  module * { export * }
+}
