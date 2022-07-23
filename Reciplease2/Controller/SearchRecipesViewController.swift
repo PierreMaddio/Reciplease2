@@ -23,9 +23,17 @@ import CoreData
 class SearchRecipesViewController: UIViewController {
     
     
-//    @IBOutlet var ingredientTextField: UITextField!
-//    
-//    
+    @IBOutlet weak var ingredientTextField: UITextField!
+    
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBOutlet weak var clearButton: UIButton!
+    
+    @IBOutlet weak var searchButton: UIButton!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
 //    @IBOutlet var tableView: UITableView!
 //    var items: [CDRecipe] = [] {
 //        didSet {

@@ -146,6 +146,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-Ja-7FY">
                                                         <rect key="frame" x="359" y="0.0" width="49" height="33"/>
                                                         <color key="backgroundColor" red="0.25269943480000001" green="0.58832329510000003" blue="0.3566073179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="33" id="UDQ-gu-V7z"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Add">
@@ -184,6 +187,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-h0-Nyq" userLabel="Clear Button">
                                                 <rect key="frame" x="303.66666666666669" y="0.0" width="104.33333333333331" height="33"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="U6E-y2-4XN"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Clear">
@@ -252,6 +258,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="68b-of-Xh7"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ai4-Q7-mhs" id="XV5-kP-gF0"/>
+                        <outlet property="addButton" destination="j6E-Ja-7FY" id="MPj-Kb-dmI"/>
+                        <outlet property="clearButton" destination="SAa-h0-Nyq" id="om4-Ba-092"/>
+                        <outlet property="ingredientTextField" destination="Bvc-zz-UHs" id="sXG-k9-SFt"/>
+                        <outlet property="searchButton" destination="hxw-G6-MmI" id="ADX-ej-rSl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpz-Ld-4iY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
