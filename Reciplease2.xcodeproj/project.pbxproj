@@ -115,7 +115,6 @@
 				4A9219246A32503AEC4EE914 /* Pods-Reciplease2Tests.debug.xcconfig */,
 				0E7CE8BE13F7F67B8214B2AF /* Pods-Reciplease2Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +143,7 @@
 		FA0952C42881F6AC00EEC3EA /* Reciplease2 */ = {
 			isa = PBXGroup;
 			children = (
+				FA095330288C2C2200EEC3EA /* Model */,
 				FA0953212886F68500EEC3EA /* View */,
 				FA0953202886F65F00EEC3EA /* Controller */,
 				FA0952C52881F6AC00EEC3EA /* AppDelegate.swift */,
@@ -188,6 +188,13 @@
 				FA0952D32881F6AF00EEC3EA /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FA095330288C2C2200EEC3EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
