@@ -27,7 +27,7 @@ class SearchRecipesViewController: UIViewController {
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
+    @IBOutlet var allButtons: [UIButton]!
     
 //    @IBOutlet var tableView: UITableView!
 //    var items: [CDRecipe] = [] {
