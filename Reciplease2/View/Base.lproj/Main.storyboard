@@ -78,10 +78,29 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="eQC-tg-GlC"/>
+                    <connections>
+                        <segue destination="AMc-Q1-cVD" kind="show" id="cgj-Ff-Bgl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZZ-g5-fgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417.75700934579436" y="631.74946004319656"/>
+        </scene>
+        <!--Detail Favorites Recipes View Controller-->
+        <scene sceneID="YJX-xL-tUm">
+            <objects>
+                <viewController id="AMc-Q1-cVD" userLabel="Detail Favorites Recipes View Controller" customClass="DetailFavoritesRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mol-x0-VCo">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="mau-6U-gcA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jz4-nM-X0Z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAq-Qc-Dcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="632"/>
         </scene>
         <!--Search-->
         <scene sceneID="g7M-fv-abL">
@@ -302,10 +321,29 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zVo-4M-yhI"/>
+                    <connections>
+                        <segue destination="vJy-4m-sEb" kind="show" id="wmX-0c-Q2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWa-LT-Dez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1226.6355140186915" y="-60.259179265658751"/>
+        </scene>
+        <!--Detail Recipe View Controller-->
+        <scene sceneID="0WW-d6-bF5">
+            <objects>
+                <viewController id="vJy-4m-sEb" userLabel="Detail Recipe View Controller" customClass="DetailRecipeViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fDp-ZL-QnF">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ske-pz-mo4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SCq-NZ-Aab"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XaH-LA-U8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2050" y="-60"/>
         </scene>
     </scenes>
     <resources>

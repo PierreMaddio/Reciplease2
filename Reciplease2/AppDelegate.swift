@@ -8,9 +8,6 @@
 import UIKit
 import CoreData
 
-var db: NSPersistentContainer {
-    (UIApplication.shared.delegate as! AppDelegate).persistentContainer
-}
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -61,20 +58,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    
-    // MARK: - Others
-    
-//    func createInitialData() {
-//        
-//        let recipe = NSEntityDescription.insertNewObject(forEntityName: "CDRecipe", into: db.viewContext) as! CDRecipe
-//        recipe.attr_name = "first recipe"
-//        
-//        let chickenIngridient = NSEntityDescription.insertNewObject(forEntityName: "CDIngredient", into: db.viewContext) as! CDIngredient
-//        chickenIngridient.attr_name = "chicken"
-//        
-//        recipe.rel_ingredient = [chickenIngridient]
-//        
-//        let result = try? db.viewContext.save()
-//    }
 }
 
