@@ -22,4 +22,10 @@ class SearchRecipesViewController: UIViewController {
 
     }
     
+    @IBAction func searchButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: "ShowListRecipe", sender: nil)
+    }
+    
+    
+    
 }

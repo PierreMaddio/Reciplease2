@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="R3V-gX-QcM" kind="relationship" relationship="viewControllers" id="PMG-7w-4YL"/>
@@ -110,6 +113,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dAd-KJ-GJg">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="22"/>
                         </textAttributes>
@@ -163,12 +168,12 @@
                                                 <rect key="frame" x="0.0" y="37" width="408" height="33"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lemon, Cheese, Sausages..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bvc-zz-UHs" userLabel="Ingredient Text Field">
-                                                        <rect key="frame" x="0.0" y="0.0" width="349" height="33"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="33"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6E-Ja-7FY">
-                                                        <rect key="frame" x="359" y="0.0" width="49" height="33"/>
+                                                        <rect key="frame" x="337" y="0.0" width="71" height="33"/>
                                                         <color key="backgroundColor" red="0.25269943480000001" green="0.58832329510000003" blue="0.3566073179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="UDQ-gu-V7z"/>
@@ -203,13 +208,13 @@
                                         <rect key="frame" x="10" y="8.6666666666666572" width="408" height="33"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgC-FD-AnC">
-                                                <rect key="frame" x="0.0" y="0.0" width="319.33333333333331" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="33"/>
                                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAa-h0-Nyq" userLabel="Clear Button">
-                                                <rect key="frame" x="329.33333333333331" y="0.0" width="78.666666666666686" height="33"/>
+                                                <rect key="frame" x="337" y="0.0" width="71" height="33"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="33" id="U6E-y2-4XN"/>
@@ -250,6 +255,9 @@
                                 <state key="normal" title="Search for recipes">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchButtonAction:" destination="GGb-Cd-4cE" eventType="touchUpInside" id="t9e-Uf-M2N"/>
+                                </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-Q7-mhs">
                                 <rect key="frame" x="199" y="695" width="30" height="30"/>
@@ -264,6 +272,7 @@
                         <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="hxw-G6-MmI" firstAttribute="centerX" secondItem="ux8-Wi-HK5" secondAttribute="centerX" id="11t-vm-cji"/>
+                            <constraint firstItem="j6E-Ja-7FY" firstAttribute="width" secondItem="SAa-h0-Nyq" secondAttribute="width" id="1qf-F9-GgA"/>
                             <constraint firstItem="ai4-Q7-mhs" firstAttribute="centerY" secondItem="hxw-G6-MmI" secondAttribute="centerY" id="7Vv-lB-Q07"/>
                             <constraint firstItem="ai4-Q7-mhs" firstAttribute="centerX" secondItem="hxw-G6-MmI" secondAttribute="centerX" id="9bb-w5-FdY"/>
                             <constraint firstItem="hxw-G6-MmI" firstAttribute="leading" secondItem="QF6-Vp-BXo" secondAttribute="leading" constant="20" id="AQC-9z-6wW"/>
@@ -281,7 +290,9 @@
                             <constraint firstItem="QF6-Vp-BXo" firstAttribute="trailing" secondItem="Hdb-4m-aWE" secondAttribute="trailing" id="xFv-rs-WRO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="68b-of-Xh7"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="68b-of-Xh7">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="wfp-Vr-8g1"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="ai4-Q7-mhs" id="XV5-kP-gF0"/>
                         <outlet property="addButton" destination="j6E-Ja-7FY" id="MPj-Kb-dmI"/>
@@ -291,7 +302,7 @@
                         <outletCollection property="allButtons" destination="j6E-Ja-7FY" collectionClass="NSMutableArray" id="hpU-gw-4ne"/>
                         <outletCollection property="allButtons" destination="SAa-h0-Nyq" collectionClass="NSMutableArray" id="uu6-kw-eCU"/>
                         <outletCollection property="allButtons" destination="hxw-G6-MmI" collectionClass="NSMutableArray" id="jej-zS-5Mm"/>
-                        <segue destination="xyC-Ys-kuZ" kind="show" id="aTD-fB-2Uk"/>
+                        <segue destination="xyC-Ys-kuZ" kind="show" identifier="ShowListRecipe" id="aTD-fB-2Uk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpz-Ld-4iY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -320,7 +331,9 @@
                             <constraint firstItem="RTE-VU-Gov" firstAttribute="top" secondItem="lIV-eu-ekL" secondAttribute="top" id="nbH-hP-6Wg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="zVo-4M-yhI"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="zVo-4M-yhI">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ubo-sq-zrl"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="vJy-4m-sEb" kind="show" id="wmX-0c-Q2v"/>
                     </connections>
@@ -339,7 +352,7 @@
                         <viewLayoutGuide key="safeArea" id="Ske-pz-mo4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SCq-NZ-Aab"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="SCq-NZ-Aab"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaH-LA-U8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
