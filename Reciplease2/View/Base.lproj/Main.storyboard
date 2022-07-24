@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WVw-vk-XJi" userLabel="Favorites Recipes Table View">
-                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="805"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -72,7 +72,7 @@
                         <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WVw-vk-XJi" firstAttribute="top" secondItem="NAb-Mg-8U9" secondAttribute="top" id="1D3-VO-EhE"/>
-                            <constraint firstItem="WVw-vk-XJi" firstAttribute="bottom" secondItem="NAb-Mg-8U9" secondAttribute="bottom" id="KHM-mo-G14"/>
+                            <constraint firstItem="WVw-vk-XJi" firstAttribute="bottom" secondItem="NAb-Mg-8U9" secondAttribute="bottom" constant="50" id="KHM-mo-G14"/>
                             <constraint firstItem="WVw-vk-XJi" firstAttribute="leading" secondItem="NAb-Mg-8U9" secondAttribute="leading" id="S9O-WQ-WxE"/>
                             <constraint firstItem="NAb-Mg-8U9" firstAttribute="trailing" secondItem="WVw-vk-XJi" secondAttribute="trailing" id="TdO-bS-klN"/>
                         </constraints>
@@ -272,11 +272,40 @@
                         <outletCollection property="allButtons" destination="j6E-Ja-7FY" collectionClass="NSMutableArray" id="hpU-gw-4ne"/>
                         <outletCollection property="allButtons" destination="SAa-h0-Nyq" collectionClass="NSMutableArray" id="uu6-kw-eCU"/>
                         <outletCollection property="allButtons" destination="hxw-G6-MmI" collectionClass="NSMutableArray" id="jej-zS-5Mm"/>
+                        <segue destination="xyC-Ys-kuZ" kind="show" id="aTD-fB-2Uk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpz-Ld-4iY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="418.84057971014494" y="-60.267857142857139"/>
+        </scene>
+        <!--List Recipes View Controller-->
+        <scene sceneID="zIa-Kf-1mV">
+            <objects>
+                <viewController id="xyC-Ys-kuZ" userLabel="List Recipes View Controller" customClass="ListRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kf7-fx-vHa">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="838"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RTE-VU-Gov">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="705"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lIV-eu-ekL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lIV-eu-ekL" firstAttribute="trailing" secondItem="RTE-VU-Gov" secondAttribute="trailing" id="P5M-bV-w6u"/>
+                            <constraint firstItem="RTE-VU-Gov" firstAttribute="leading" secondItem="lIV-eu-ekL" secondAttribute="leading" id="idi-mP-ApQ"/>
+                            <constraint firstItem="lIV-eu-ekL" firstAttribute="bottom" secondItem="RTE-VU-Gov" secondAttribute="bottom" constant="50" id="nFa-JO-Lhr"/>
+                            <constraint firstItem="RTE-VU-Gov" firstAttribute="top" secondItem="lIV-eu-ekL" secondAttribute="top" id="nbH-hP-6Wg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zVo-4M-yhI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWa-LT-Dez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226.6355140186915" y="-60.259179265658751"/>
         </scene>
     </scenes>
     <resources>

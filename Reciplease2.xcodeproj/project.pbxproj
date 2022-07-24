@@ -21,6 +21,7 @@
 		FA0952EC2881F6AF00EEC3EA /* Reciplease2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0952EB2881F6AF00EEC3EA /* Reciplease2UITestsLaunchTests.swift */; };
 		FA0953232886F71600EEC3EA /* SearchRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0953222886F71600EEC3EA /* SearchRecipesViewController.swift */; };
 		FA09532F2889DC1700EEC3EA /* FavoritesRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA09532E2889DC1700EEC3EA /* FavoritesRecipesViewController.swift */; };
+		FA095332288D4AA700EEC3EA /* ListRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095331288D4AA700EEC3EA /* ListRecipesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FA0952EB2881F6AF00EEC3EA /* Reciplease2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reciplease2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA0953222886F71600EEC3EA /* SearchRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecipesViewController.swift; sourceTree = "<group>"; };
 		FA09532E2889DC1700EEC3EA /* FavoritesRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRecipesViewController.swift; sourceTree = "<group>"; };
+		FA095331288D4AA700EEC3EA /* ListRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				FA0953222886F71600EEC3EA /* SearchRecipesViewController.swift */,
 				FA09532E2889DC1700EEC3EA /* FavoritesRecipesViewController.swift */,
+				FA095331288D4AA700EEC3EA /* ListRecipesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -456,6 +459,7 @@
 			files = (
 				FA09532F2889DC1700EEC3EA /* FavoritesRecipesViewController.swift in Sources */,
 				FA0953232886F71600EEC3EA /* SearchRecipesViewController.swift in Sources */,
+				FA095332288D4AA700EEC3EA /* ListRecipesViewController.swift in Sources */,
 				FA0952C62881F6AC00EEC3EA /* AppDelegate.swift in Sources */,
 				FA0952C82881F6AC00EEC3EA /* SceneDelegate.swift in Sources */,
 				FA0952D02881F6AC00EEC3EA /* Reciplease2.xcdatamodeld in Sources */,
