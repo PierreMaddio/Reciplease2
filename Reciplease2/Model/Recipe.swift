@@ -61,8 +61,7 @@ struct RecipeClass: Codable {
     let url: String
     let shareAs: String
     let yield: Int
-    let dietLabels: [DietLabel]
-    let healthLabels, cautions, ingredientLines: [String]
+    let dietLabels, healthLabels, cautions, ingredientLines: [String]
     let ingredients: [Ingredient]
     let calories, totalWeight: Double
     let totalTime: Int
@@ -71,12 +70,6 @@ struct RecipeClass: Codable {
     let dishType: [DishType]
     let totalNutrients, totalDaily: [String: Total]
     let digest: [Digest]
-}
-
-enum DietLabel: String, Codable {
-    case highFiber = "High-Fiber"
-    case highProtein = "High-Protein"
-    case lowCarb = "Low-Carb"
 }
 
 // MARK: - Digest
@@ -113,7 +106,6 @@ enum Unit: String, Codable {
 enum DishType: String, Codable {
     case condimentsAndSauces = "condiments and sauces"
     case mainCourse = "main course"
-    case soup = "soup"
     case starter = "starter"
 }
 

@@ -25,6 +25,7 @@
 		FA095334288D650F00EEC3EA /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */; };
 		FA095336288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095335288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift */; };
 		FA0D603828905BC500CBA9D1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D603728905BC500CBA9D1 /* Recipe.swift */; };
+		FAF29D2228945C64005B4A36 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF29D2128945C64005B4A36 /* RecipeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		FA095335288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesRecipesViewController.swift; sourceTree = "<group>"; };
 		FA0D603728905BC500CBA9D1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		FAF29D2128945C64005B4A36 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		FA0952C42881F6AC00EEC3EA /* Reciplease2 */ = {
 			isa = PBXGroup;
 			children = (
+				FAF29D2028945C45005B4A36 /* Network */,
 				FA095330288C2C2200EEC3EA /* Model */,
 				FA0953212886F68500EEC3EA /* View */,
 				FA0953202886F65F00EEC3EA /* Controller */,
@@ -207,6 +210,14 @@
 				FA0D603728905BC500CBA9D1 /* Recipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FAF29D2028945C45005B4A36 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FAF29D2128945C64005B4A36 /* RecipeService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,6 +484,7 @@
 				FA095334288D650F00EEC3EA /* DetailRecipeViewController.swift in Sources */,
 				FA095336288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift in Sources */,
 				FA0D603828905BC500CBA9D1 /* Recipe.swift in Sources */,
+				FAF29D2228945C64005B4A36 /* RecipeService.swift in Sources */,
 				FA0952C82881F6AC00EEC3EA /* SceneDelegate.swift in Sources */,
 				FA0952D02881F6AC00EEC3EA /* Reciplease2.xcdatamodeld in Sources */,
 			);
