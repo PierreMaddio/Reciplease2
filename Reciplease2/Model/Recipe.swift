@@ -61,15 +61,29 @@ struct RecipeClass: Codable {
     let url: String
     let shareAs: String
     let yield: Int
-    let dietLabels, healthLabels, cautions, ingredientLines: [String]
+    let dietLabels: [DietLabel]
+    let healthLabels, cautions, ingredientLines: [String]
     let ingredients: [Ingredient]
     let calories, totalWeight: Double
     let totalTime: Int
-    let cuisineType: [String]
+    let cuisineType: [CuisineType]
     let mealType: [MealType]
-    let dishType: [DishType]
+    let dishType: [String]
     let totalNutrients, totalDaily: [String: Total]
     let digest: [Digest]
+}
+
+enum CuisineType: String, Codable {
+    case american = "american"
+    case italian = "italian"
+    case mexican = "mexican"
+    case middleEastern = "middle eastern"
+}
+
+enum DietLabel: String, Codable {
+    case balanced = "Balanced"
+    case highFiber = "High-Fiber"
+    case lowCarb = "Low-Carb"
 }
 
 // MARK: - Digest
@@ -101,12 +115,6 @@ enum Unit: String, Codable {
     case kcal = "kcal"
     case mg = "mg"
     case µg = "µg"
-}
-
-enum DishType: String, Codable {
-    case condimentsAndSauces = "condiments and sauces"
-    case mainCourse = "main course"
-    case starter = "starter"
 }
 
 // MARK: - Images

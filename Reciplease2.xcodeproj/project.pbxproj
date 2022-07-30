@@ -667,6 +667,7 @@
 				DEVELOPMENT_TEAM = YV7MJBA2GX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reciplease;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -697,6 +698,7 @@
 				DEVELOPMENT_TEAM = YV7MJBA2GX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Reciplease2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Reciplease;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
