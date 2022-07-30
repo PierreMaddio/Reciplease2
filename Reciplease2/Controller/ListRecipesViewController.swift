@@ -8,7 +8,9 @@
 import UIKit
 
 class ListRecipesViewController: UIViewController {
-
+    
+    @IBOutlet weak var tableRecipes: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

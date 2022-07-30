@@ -335,6 +335,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ubo-sq-zrl"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableRecipes" destination="RTE-VU-Gov" id="lTX-0B-26l"/>
                         <segue destination="vJy-4m-sEb" kind="show" id="wmX-0c-Q2v"/>
                     </connections>
                 </viewController>
