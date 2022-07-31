@@ -47,6 +47,15 @@ class SearchRecipesViewController: UIViewController {
         }
     }
     
+    // preparation des parametres à envoyer avant le lancement de segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowListRecipe" {
+            if let destinationVc = segue.destination as? ListRecipesViewController {
+                destinationVc.ingredients = self.ingredients
+            }
+        }
+    }
+    
 }
 
 extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSource {
