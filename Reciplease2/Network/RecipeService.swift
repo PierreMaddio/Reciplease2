@@ -11,7 +11,7 @@ import Alamofire
 class RecipeService {
     
     private let url: String
-    typealias recipesCallBack = (_ recipes: Recipe?, _ status: Bool, _ message: String) -> Void
+    typealias recipesCallBack = (_ recipes: RecipesSearch?, _ status: Bool, _ message: String) -> Void
     var callBack: recipesCallBack?
     
     init(url: String) {
@@ -32,7 +32,7 @@ class RecipeService {
                     self.callBack?(nil, false, "")
                     return }
                 do {
-                    let recipes = try JSONDecoder().decode(Recipe.self, from: data)
+                    let recipes = try JSONDecoder().decode(RecipesSearch.self, from: data)
                     self.callBack?(recipes, true, "")
                 } catch {
                     self.callBack?(nil, false, error.localizedDescription)

@@ -15,10 +15,16 @@ class SearchRecipesViewController: UIViewController {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var allButtons: [UIButton]!
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    var ingredients: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
 
     }
     
@@ -26,6 +32,33 @@ class SearchRecipesViewController: UIViewController {
         performSegue(withIdentifier: "ShowListRecipe", sender: nil)
     }
     
+    @IBAction func addIngredientAction(_ sender: Any) {
+        if let ingredientText = ingredientTextField.text, !ingredientText.isEmpty {
+            let tab = ingredientText.split(separator: ",")
+            if tab.isEmpty {
+                ingredients.append(ingredientText)
+            } else {
+                for item in tab {
+                    ingredients.append(item.description.trimmingCharacters(in: .whitespaces))
+                }
+            }
+            tableView.reloadData()
+            ingredientTextField.text = ""
+        }
+    }
     
+}
+
+extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIngredient", for: indexPath)
+        cell.textLabel?.text = ingredients[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        ingredients.count
+    }
     
 }

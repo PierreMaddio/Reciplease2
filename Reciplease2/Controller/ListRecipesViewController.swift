@@ -10,8 +10,8 @@ import UIKit
 class ListRecipesViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableRecipes: UITableView!
-    var recipes = [RecipeClass]()
-    var ingredients: [String] = ["chicken", "ketchup", "cheese", "bacon"]
+    var recipes = [Recipe]()
+    var ingredients: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
