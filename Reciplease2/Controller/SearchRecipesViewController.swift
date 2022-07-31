@@ -47,6 +47,12 @@ class SearchRecipesViewController: UIViewController {
         }
     }
     
+    @IBAction func clearIngredientAction(_ sender: Any) {
+        ingredients.removeAll()
+        tableView.reloadData()
+    }
+    
+    
     // preparation des parametres à envoyer avant le lancement de segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowListRecipe" {

@@ -9,6 +9,13 @@ import UIKit
 
 class DetailRecipeViewController: UIViewController {
 
+//    let recipe = Recipe(label: <#T##String#>,
+//                        image: <#T##String?#>,
+//                        url: <#T##String#>,
+//                        yield: <#T##Int#>,
+//                        ingredientLines: <#T##[String]#>,
+//                        totalTime: <#T##Int?#>)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
