@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ListRecipesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ListRecipesViewController: UIViewController {
     
     @IBOutlet weak var tableRecipes: UITableView!
     var recipes = [Recipe]()
@@ -32,6 +32,14 @@ class ListRecipesViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+    
+}
+
+extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return recipes.count
     }
@@ -46,9 +54,4 @@ class ListRecipesViewController: UIViewController, UITableViewDataSource, UITabl
         
         return cell!
     }
-
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-    
 }
