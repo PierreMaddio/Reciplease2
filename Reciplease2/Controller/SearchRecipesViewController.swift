@@ -53,7 +53,7 @@ class SearchRecipesViewController: UIViewController {
     }
     
     
-    // preparation des parametres à envoyer avant le lancement de segue
+    // preparation of the parameters to be sent before launching segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowListRecipe" {
             if let destinationVc = segue.destination as? ListRecipesViewController {

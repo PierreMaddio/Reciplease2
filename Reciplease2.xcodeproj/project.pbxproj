@@ -157,11 +157,7 @@
 				FA095330288C2C2200EEC3EA /* Model */,
 				FA0953212886F68500EEC3EA /* View */,
 				FA0953202886F65F00EEC3EA /* Controller */,
-				FA0952C52881F6AC00EEC3EA /* AppDelegate.swift */,
-				FA0952C72881F6AC00EEC3EA /* SceneDelegate.swift */,
-				FA0952D12881F6AF00EEC3EA /* Assets.xcassets */,
-				FA0952D62881F6AF00EEC3EA /* Info.plist */,
-				FA0952CE2881F6AC00EEC3EA /* Reciplease2.xcdatamodeld */,
+				FA1C7794289D3D70000065AF /* Supporting Files */,
 			);
 			path = Reciplease2;
 			sourceTree = "<group>";
@@ -207,9 +203,21 @@
 		FA095330288C2C2200EEC3EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA0952CE2881F6AC00EEC3EA /* Reciplease2.xcdatamodeld */,
 				FA0D603728905BC500CBA9D1 /* Recipe.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA1C7794289D3D70000065AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FA0952C52881F6AC00EEC3EA /* AppDelegate.swift */,
+				FA0952C72881F6AC00EEC3EA /* SceneDelegate.swift */,
+				FA0952D12881F6AF00EEC3EA /* Assets.xcassets */,
+				FA0952D62881F6AF00EEC3EA /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FAF29D2028945C45005B4A36 /* Network */ = {
@@ -666,7 +674,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YV7MJBA2GX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Reciplease2/Info.plist;
+				INFOPLIST_FILE = "Reciplease2/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Reciplease;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -697,7 +705,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YV7MJBA2GX;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Reciplease2/Info.plist;
+				INFOPLIST_FILE = "Reciplease2/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Reciplease;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
