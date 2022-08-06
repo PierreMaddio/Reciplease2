@@ -9,9 +9,12 @@ import UIKit
 
 class ListRecipesViewController: UIViewController {
     
-    @IBOutlet weak var tableRecipes: UITableView!
+    static var cellIdentifier = "RecipeCell"
+    
     var recipes = [Recipe]()
     var ingredients: [String] = []
+    
+    @IBOutlet weak var tableRecipes: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +44,9 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: ListRecipesViewController.cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "recipeCell")
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: ListRecipesViewController.cellIdentifier)
         }
         let recipe = recipes[indexPath.row]
         cell?.textLabel?.text = recipe.label

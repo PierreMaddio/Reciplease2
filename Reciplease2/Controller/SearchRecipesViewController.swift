@@ -9,6 +9,8 @@ import CoreData
 
 class SearchRecipesViewController: UIViewController {
     
+    static var cellIdentifier = "CellIngredient"
+    
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
@@ -16,7 +18,6 @@ class SearchRecipesViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var allButtons: [UIButton]!
     @IBOutlet weak var tableView: UITableView!
-    
     
     var ingredients: [String] = []
     
@@ -29,7 +30,7 @@ class SearchRecipesViewController: UIViewController {
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
-        performSegue(withIdentifier: "ShowListRecipe", sender: nil)
+        performSegue(withIdentifier: "ShowListRecipes", sender: nil)
     }
     
     @IBAction func addIngredientAction(_ sender: Any) {
@@ -55,7 +56,7 @@ class SearchRecipesViewController: UIViewController {
     
     // preparation of the parameters to be sent before launching segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowListRecipe" {
+        if segue.identifier == "ShowListRecipes" {
             if let destinationVc = segue.destination as? ListRecipesViewController {
                 destinationVc.ingredients = self.ingredients
             }
@@ -66,14 +67,15 @@ class SearchRecipesViewController: UIViewController {
 
 extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIngredient", for: indexPath)
-        cell.textLabel?.text = ingredients[indexPath.row]
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         ingredients.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipesViewController.cellIdentifier, for: indexPath)
+        cell.textLabel?.text = ingredients[indexPath.row]
+        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.font = UIFont (name: "Chalkduster", size: 18)
+        return cell
+    }
 }

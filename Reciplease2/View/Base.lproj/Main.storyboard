@@ -250,14 +250,14 @@
                                 <rect key="frame" x="0.0" y="150" width="375" height="346"/>
                                 <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellIngredient" textLabel="IF8-oH-6eJ" style="IBUITableViewCellStyleDefault" id="X7r-cd-O2B">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellIngredient" textLabel="bKl-yf-v5m" style="IBUITableViewCellStyleDefault" id="X7r-cd-O2B">
                                         <rect key="frame" x="0.0" y="44.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7r-cd-O2B" id="K4B-Ap-EsP">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IF8-oH-6eJ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bKl-yf-v5m">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -266,6 +266,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -328,7 +329,7 @@
                         <outletCollection property="allButtons" destination="j6E-Ja-7FY" collectionClass="NSMutableArray" id="hpU-gw-4ne"/>
                         <outletCollection property="allButtons" destination="SAa-h0-Nyq" collectionClass="NSMutableArray" id="uu6-kw-eCU"/>
                         <outletCollection property="allButtons" destination="hxw-G6-MmI" collectionClass="NSMutableArray" id="jej-zS-5Mm"/>
-                        <segue destination="xyC-Ys-kuZ" kind="show" identifier="ShowListRecipe" id="aTD-fB-2Uk"/>
+                        <segue destination="xyC-Ys-kuZ" kind="show" identifier="ShowListRecipes" id="aTD-fB-2Uk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpz-Ld-4iY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
