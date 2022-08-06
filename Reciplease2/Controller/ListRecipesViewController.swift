@@ -32,10 +32,6 @@ class ListRecipesViewController: UIViewController {
         
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-    
 }
 
 extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate {
