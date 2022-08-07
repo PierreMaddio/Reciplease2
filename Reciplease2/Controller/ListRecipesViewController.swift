@@ -22,7 +22,7 @@ class ListRecipesViewController: UIViewController {
         tableRecipes.dataSource = self
         tableRecipes.delegate = self
         
-        let service = RecipeService(url: "https://api.edamam.com/api/recipes/v2?q=\(ingredients.joined(separator: ","))&app_key=c4ed16eb0795215c47de2959c93d00c4&app_id=7d167a47&type=any")
+        let service = RecipeService(url: ApiService.completeUrlRequest(ingredients: ingredients))
         
         service.getRecipes()
         service.completionHandler { [weak self] recipes, status, message in
