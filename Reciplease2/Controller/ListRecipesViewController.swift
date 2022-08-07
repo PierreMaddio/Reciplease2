@@ -9,8 +9,6 @@ import UIKit
 
 class ListRecipesViewController: UIViewController {
     
-    static var cellIdentifier = "RecipeCell"
-    
     var recipes = [Recipe]()
     var ingredients: [String] = []
     
@@ -44,13 +42,13 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: ListRecipesViewController.cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: ListRecipesViewController.cellIdentifier)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell else {
+            return UITableViewCell()
         }
         let recipe = recipes[indexPath.row]
-        cell?.textLabel?.text = recipe.label
         
-        return cell!
+        cell.configure(label: recipe.label, image: recipe.image ?? "")
+        
+        return cell
     }
 }

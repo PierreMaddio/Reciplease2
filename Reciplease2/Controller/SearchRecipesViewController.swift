@@ -73,7 +73,7 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipesViewController.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = ingredients[indexPath.row]
+        cell.textLabel?.text = "- " + ingredients[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont (name: "Chalkduster", size: 18)
         return cell
