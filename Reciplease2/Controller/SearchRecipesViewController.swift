@@ -9,8 +9,6 @@ import CoreData
 
 class SearchRecipesViewController: UIViewController {
     
-    static var cellIdentifier = "CellIngredient"
-    
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
@@ -26,7 +24,7 @@ class SearchRecipesViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -52,8 +50,7 @@ class SearchRecipesViewController: UIViewController {
         ingredients.removeAll()
         tableView.reloadData()
     }
-    
-    
+        
     // preparation of the parameters to be sent before launching segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowListRecipes" {
@@ -62,7 +59,6 @@ class SearchRecipesViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -72,7 +68,7 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SearchRecipesViewController.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellIngredient", for: indexPath)
         cell.textLabel?.text = "- " + ingredients[indexPath.row]
         cell.textLabel?.textColor = UIColor.white
         cell.textLabel?.font = UIFont (name: "Chalkduster", size: 18)

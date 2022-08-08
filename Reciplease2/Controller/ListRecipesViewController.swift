@@ -16,7 +16,7 @@ class ListRecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableRecipes.dataSource = self
         tableRecipes.delegate = self
         
@@ -30,9 +30,15 @@ class ListRecipesViewController: UIViewController {
             self.recipes = _recipes.hits.map { $0.recipe }
             self.tableRecipes.reloadData()
         }
-        
     }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ShowDetailRecipe" {
+//            if let destinationVc = segue.destination as? DetailRecipeViewController {
+//                destinationVc.recipes = self.recipes
+//            }
+//        }
+//    }
 }
 
 extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -46,9 +52,20 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         let recipe = recipes[indexPath.row]
-        
         cell.configure(label: recipe.label, image: recipe.image ?? "")
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomTableViewCell else { return }
+        let recipe = recipes[indexPath.row].label
+        cell.recipeLabel.text = recipe
+    }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let vc = storyboard?.instantiateViewController(withIdentifier: "detailRecipe") as? DetailRecipeViewController {
+//            vc.titleRecipeLabel.text = recipes[indexPath.row].label
+//            navigationController?.pushViewController(vc, animated: true)
+//        }
+//    }
 }

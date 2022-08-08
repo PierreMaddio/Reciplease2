@@ -82,7 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="eQC-tg-GlC"/>
                     <connections>
-                        <segue destination="AMc-Q1-cVD" kind="show" id="cgj-Ff-Bgl"/>
+                        <segue destination="AMc-Q1-cVD" kind="show" identifier="ShowFavoriteListRecipes" id="cgj-Ff-Bgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZZ-g5-fgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,7 +339,7 @@
         <!--List Recipes View Controller-->
         <scene sceneID="zIa-Kf-1mV">
             <objects>
-                <viewController id="xyC-Ys-kuZ" userLabel="List Recipes View Controller" customClass="ListRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="listRecipe" id="xyC-Ys-kuZ" userLabel="List Recipes View Controller" customClass="ListRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf7-fx-vHa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -453,7 +453,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableRecipes" destination="RTE-VU-Gov" id="lTX-0B-26l"/>
-                        <segue destination="vJy-4m-sEb" kind="show" id="wmX-0c-Q2v"/>
+                        <segue destination="vJy-4m-sEb" kind="show" identifier="ShowDetailRecipe" id="wmX-0c-Q2v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWa-LT-Dez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -463,7 +463,7 @@
         <!--Detail Recipe View Controller-->
         <scene sceneID="0WW-d6-bF5">
             <objects>
-                <viewController id="vJy-4m-sEb" userLabel="Detail Recipe View Controller" customClass="DetailRecipeViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailRecipe" id="vJy-4m-sEb" userLabel="Detail Recipe View Controller" customClass="DetailRecipeViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fDp-ZL-QnF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
