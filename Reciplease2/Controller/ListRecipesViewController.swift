@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListRecipesViewController: UIViewController {
     
@@ -22,13 +23,18 @@ class ListRecipesViewController: UIViewController {
         
         let service = RecipeService(url: ApiService.completeUrlRequest(ingredients: ingredients))
         
-        service.getRecipes()
-        service.completionHandler { [weak self] recipes, status, message in
-            guard let self = self else { return }
-            guard status else { return }
-            guard let _recipes = recipes else { return }
-            self.recipes = _recipes.hits.map { $0.recipe }
-            self.tableRecipes.reloadData()
+        service.getRecipes { result in
+            switch result {
+            case .success(let obj):
+                self.recipes = obj.hits.map { $0.recipe }
+                self.tableRecipes.reloadData()
+            case .failure(let err):
+                if case AFError.responseSerializationFailed(reason:) = err {
+                    
+                } else {
+                    
+                }
+            }
         }
     }
     

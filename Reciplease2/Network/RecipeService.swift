@@ -8,18 +8,23 @@
 import Foundation
 import Alamofire
 
-class RecipeService {
+enum ApiError: Error {
+    case decodingFailedBecauseOfModelIsWrong
+}
+
+protocol RecipeServiceProtocol {
+    func getRecipes(completion: @escaping (Result<RecipesSearch, AFError>) -> Void)
+}
+
+class RecipeService: RecipeServiceProtocol {
     
     private let url: String
-    typealias recipesCallBack = (_ recipes: RecipesSearch?, _ status: Bool, _ message: String) -> Void
-    var callBack: recipesCallBack?
     
     init(url: String) {
         self.url = url
     }
     
-    // MARK:- getRecipes
-    func getRecipes() {
+    func getRecipes(completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
         AF.request(
             self.url,
             method: .get,
@@ -29,18 +34,15 @@ class RecipeService {
             interceptor: nil).response {
                 (responseData) in
                 guard let data = responseData.data else {
-                    self.callBack?(nil, false, "")
-                    return }
+                    completion(.failure(.responseValidationFailed(reason: .dataFileNil)))
+                    return
+                }
                 do {
                     let recipes = try JSONDecoder().decode(RecipesSearch.self, from: data)
-                    self.callBack?(recipes, true, "")
+                    completion(.success(recipes))
                 } catch {
-                    self.callBack?(nil, false, error.localizedDescription)
+                    completion(.failure(.responseSerializationFailed(reason: .decodingFailed(error: ApiError.decodingFailedBecauseOfModelIsWrong))))
                 }
             }
-    }
-    
-    func completionHandler(callBack: @escaping recipesCallBack) {
-        self.callBack = callBack
     }
 }

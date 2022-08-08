@@ -8,36 +8,25 @@
 import Foundation
 
 class ApiService {
-    //MARK: - Methods
+    
+    static let appKey = "c4ed16eb0795215c47de2959c93d00c4"
+    static let appID = "7d167a47"
+    
+    private static let baseUrlApi: URL = URL(string: "https://api.edamam.com/api/")!
+    
+    //MARK: - Methods Endpoint 1 List of ingridients
     
     static func completeUrlRequest(ingredients: [String]) -> String {
-        var newQueryItems = [URLQueryItem]()
-        
-        let baseUrlApi = URL(string: "https://api.edamam.com/api/")!
         let endpoint = URL(string: "recipes/v2/", relativeTo: baseUrlApi)!
-        let appKeyValue = Bundle.main.object(forInfoDictionaryKey: "app_key") as! String
-        let appIDValue = Bundle.main.object(forInfoDictionaryKey: "app_id") as! String
-        var urlCom = URLComponents.init(string: endpoint.absoluteString)!
         
-        newQueryItems.append(.init(name: "app_key", value: appKeyValue))
-        newQueryItems.append(.init(name: "app_id", value: appIDValue))
+        var newQueryItems = [URLQueryItem]()
+        newQueryItems.append(.init(name: "app_key", value: appKey))
+        newQueryItems.append(.init(name: "app_id", value: appID))
         newQueryItems.append(.init(name: "type", value: "any"))
         newQueryItems.append(.init(name: "q", value: ingredients.joined(separator: ",")))
-        urlCom.queryItems = newQueryItems
         
+        var urlCom = URLComponents.init(string: endpoint.absoluteString)!
+        urlCom.queryItems = newQueryItems
         return urlCom.url!.absoluteString
     }
-    
-    //    let baseUrlApi = URL.init(string: "https://api.edamam.com/api/")
-    //    let endpoint = URL.init(string: "recipes/v2/", relativeTo: baseUrlApi)!
-    //
-    //    let appKeyValue = Bundle.main.object(forInfoDictionaryKey: "app_key") as! String
-    //    let appIDValue = Bundle.main.object(forInfoDictionaryKey: "app_id") as! String
-    //    var urlCom = URLComponents.init(string: endpoint.absoluteString)!
-    //    var newQueryItems = [URLQueryItem]()
-    //    newQueryItems.append(.init(name: "app_key", value: appKeyValue))
-    //    newQueryItems.append(.init(name: "app_id", value: appIDValue))
-    //    newQueryItems.append(.init(name: "type", value: "any"))
-    //    newQueryItems.append(.init(name: "q", value: ingredients.joined(separator: ",")))
-    //    urlCom.queryItems = newQueryItems
 }
