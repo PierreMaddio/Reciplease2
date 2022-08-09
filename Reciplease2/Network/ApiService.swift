@@ -16,7 +16,7 @@ class ApiService {
     
     //MARK: - Methods Endpoint 1 List of ingridients
     
-    static func completeUrlRequest(ingredients: [String]) -> String {
+    static func completeUrlRequest(ingredients: [String]) -> URL {
         let endpoint = URL(string: "recipes/v2/", relativeTo: baseUrlApi)!
         
         var newQueryItems = [URLQueryItem]()
@@ -27,6 +27,6 @@ class ApiService {
         
         var urlCom = URLComponents.init(string: endpoint.absoluteString)!
         urlCom.queryItems = newQueryItems
-        return urlCom.url!.absoluteString
+        return urlCom.url!
     }
 }
