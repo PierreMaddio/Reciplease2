@@ -58,46 +58,15 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         let recipe = recipes[indexPath.row]
-        cell.configure(label: recipe.label, image: recipe.image ?? "")
+        cell.configure(recipe: recipe)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell", for: indexPath) as? CustomTableViewCell else { return }
-        let recipeTitle = recipes[indexPath.row].label
-        // let recipeImage = recipes[indexPath.row].image
-        cell.recipeLabel.text = recipeTitle
-
-    }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let vc = storyboard?.instantiateViewController(withIdentifier: "detailRecipe") as? DetailRecipeViewController {
-//            vc.titleRecipeLabel.text = recipes[indexPath.row].label
-//            navigationController?.pushViewController(vc, animated: true)
-//        }
-//    }
-}
-
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        AF.request(url).responseData { response in
-            switch response.result {
-            case .success:
-                if let data = response.value {
-                    let image = UIImage(data: data)
-                    DispatchQueue.main.async() {
-                        self.image = image
-                    }
-                }
-            case .failure(let error):
-                print("error \(error.localizedDescription)")
-            }
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "detailRecipe") as? DetailRecipeViewController {
+            vc.recipe = recipes[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
 }
+

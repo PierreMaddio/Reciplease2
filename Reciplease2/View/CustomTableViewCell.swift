@@ -24,9 +24,14 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(label: String, image: String) {
-        recipeLabel.text = label
-        recipeImage.image = UIImage(named: image)
+    func configure(recipe: Recipe) {
+        recipeLabel.text = recipe.label
+        var strIngredient = ""
+        recipe.ingredientLines.forEach { ingredient in
+            strIngredient = strIngredient + " " + ingredient
+        }
+        recipeIngredientsLabel.text = strIngredient
+        recipeImage.downloaded(from: recipe.image!)
     }
     
 }

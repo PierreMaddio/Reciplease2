@@ -31,6 +31,7 @@
 		FA81F1F328A3EC4600CD5804 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */; };
 		FA81F1F428A3EC4600CD5804 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */; };
 		FA81F1F628A4114000CD5804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA81F1F528A4114000CD5804 /* Assets.xcassets */; };
+		FA81F1F928A431BE00CD5804 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */; };
 		FAC9C4AE289DA94700C4381F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4AD289DA94700C4381F /* ApiService.swift */; };
 		FAC9C4B2289E5D7200C4381F /* RecipesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */; };
 		FAF29D2228945C64005B4A36 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF29D2128945C64005B4A36 /* RecipeService.swift */; };
@@ -88,6 +89,7 @@
 		FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		FA81F1F528A4114000CD5804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		FAC9C4AD289DA94700C4381F /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearch.swift; sourceTree = "<group>"; };
 		FAF29D2128945C64005B4A36 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		FA0952C42881F6AC00EEC3EA /* Reciplease2 */ = {
 			isa = PBXGroup;
 			children = (
+				FA81F1F728A4318C00CD5804 /* Extensions */,
 				FAF29D2028945C45005B4A36 /* Network */,
 				FA095330288C2C2200EEC3EA /* Model */,
 				FA0953212886F68500EEC3EA /* View */,
@@ -240,6 +243,14 @@
 				FA0952D62881F6AF00EEC3EA /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA81F1F728A4318C00CD5804 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FAF29D2028945C45005B4A36 /* Network */ = {
@@ -520,6 +531,7 @@
 				FA095334288D650F00EEC3EA /* DetailRecipeViewController.swift in Sources */,
 				FA095336288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift in Sources */,
 				FAC9C4AE289DA94700C4381F /* ApiService.swift in Sources */,
+				FA81F1F928A431BE00CD5804 /* UIImageExtensions.swift in Sources */,
 				FAF29D2228945C64005B4A36 /* RecipeService.swift in Sources */,
 				FA0952C82881F6AC00EEC3EA /* SceneDelegate.swift in Sources */,
 				FA0952D02881F6AC00EEC3EA /* Reciplease2.xcdatamodeld in Sources */,
