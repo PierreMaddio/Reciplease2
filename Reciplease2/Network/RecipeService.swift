@@ -12,11 +12,7 @@ enum ApiError: Error {
     case decodingFailedBecauseOfModelIsWrong
 }
 
-protocol RecipeServiceProtocol {
-    func getRecipes(completion: @escaping (Result<RecipesSearch, AFError>) -> Void)
-}
-
-class RecipeService: RecipeServiceProtocol {
+class RecipeService {
     
     private let url: URL
     private let httpClient: HTTPClient

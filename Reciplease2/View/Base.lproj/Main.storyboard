@@ -358,7 +358,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-6b-fBt">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-1A-06I">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZf-1A-06I">
                                                     <rect key="frame" x="36" y="86.5" width="123" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -432,8 +432,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="recipeImage" destination="Zt5-6b-fBt" id="5x9-gf-Lph"/>
-                                            <outlet property="recipeLabel" destination="jZf-1A-06I" id="jgO-oG-pVc"/>
+                                            <outlet property="recipeImage" destination="Zt5-6b-fBt" id="nWW-Mv-F3G"/>
+                                            <outlet property="recipeLabel" destination="jZf-1A-06I" id="avN-Dz-rTs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -11,50 +11,56 @@ import Alamofire
 
 class RecipeServiceTestCase: XCTestCase {
     
-    //var ingredients: [String] = ["chicken", "lemon"]
+    var ingredients: [String] = ["chicken", "lemon"]
+    var recipes: [Recipe] = []
     
-//    func testGetRecipeShouldPostFailedCallbackIfError() {
-//        // Given
-//        let recipeService = RecipeService(url: <#T##String#>)
-//        // When
-//        let expectation = XCTestExpectation(description: "Wait for queue change.")
-//        recipeService.getRecipes { result in
-//            // Then
-//
-////            XCTAssertFalse(.success)
-////            XCTAssertNil(.recipe)
-////            expectation.fulfill()
-//        }
-//        wait(for: [expectation], timeout: 0.01)
-//    }
-    
-//        func test1() {
-//            let mockRecipeService = RecipeServiceMockSuccess()
-//            let service = RecipeService(url: ApiService.completeUrlRequest(ingredients: ingredients))
-//
-//
-//            service.getRecipes { result in
-//                switch result {
-//                case .success(let obj):
-//                    XCTAssertEqual(obj.hits[0].recipe.label, "Nutty chicken & lemon spaghetti")
-//                case .failure(let err):
-//                    if case AFError.responseSerializationFailed(reason:) = err {
-//
-//                    } else {
-//
-//                    }
-//                }
-//            }
-//        }
-    
-}
+        func test1() {
+            let service = RecipeService(url: ApiService.completeUrlRequest(ingredients: ingredients), httpClient: AlamofireClientRecipesSearchMock() as HTTPClient)
 
-import Alamofire
+
+            service.getRecipes { result in
+                switch result {
+                case .success(let obj):
+                    XCTAssertEqual(obj.hits[0].recipe.label, "Nutty chicken & lemon spaghetti")
+                case .failure(let err):
+                    if case AFError.responseSerializationFailed(reason:) = err {
+
+                    } else {
+
+                    }
+                }
+            }
+        }
+    
+    func testModelRecipeSearchDecodeFromJson() throws {
+        
+        let urlFake = ApiService.completeUrlRequest(ingredients: ingredients)
+        let alamofireClientRecipesSearchMock = AlamofireClientRecipesSearchMock()
+        
+        let expectation = expectation(description: "")
+        alamofireClientRecipesSearchMock.request(url: urlFake) { result in
+            switch result {
+            case .success(let obj):
+                self.recipes = obj.hits.map { $0.recipe }
+//                let first = try! XCTUnwrap(self.recipes.first)
+//                XCTAssertEqual(first.label, "")
+                expectation.fulfill()
+            case .failure:
+                XCTFail("something wrong with our mock")
+            }
+        }
+        waitForExpectations(timeout: 1)
+    }
+}
 
 class AlamofireClientRecipesSearchMock: HTTPClient {
     func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
-        let json = Data()
+        
+        let bundle = Bundle(for: RecipeServiceTestCase.self)
+        let json = NSDataAsset(name: "Recipe", bundle: bundle)!.data
+
         let dataResponse = AFDataResponse<Data?>.init(request: nil, response: nil, data: json, metrics: nil, serializationDuration: .zero, result: .success(json))
+        
         self.decodeRecipesSearch(from: dataResponse, completion: completion)
     }
 }

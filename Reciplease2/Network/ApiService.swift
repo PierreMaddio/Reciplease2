@@ -14,7 +14,7 @@ class ApiService {
     
     private static let baseUrlApi: URL = URL(string: "https://api.edamam.com/api/")!
     
-    //MARK: - Methods Endpoint 1 List of ingridients
+    //MARK: - Methods Endpoint 1 List of ingredients
     
     static func completeUrlRequest(ingredients: [String]) -> URL {
         let endpoint = URL(string: "recipes/v2/", relativeTo: baseUrlApi)!
