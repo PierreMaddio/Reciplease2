@@ -54,9 +54,10 @@ extension DetailRecipeViewController: UITableViewDelegate, UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
-        cell.textLabel?.text = recipe?.ingredientLines[indexPath.row] ?? ""
+        cell.textLabel?.text = "- " + (recipe?.ingredientLines[indexPath.row] ?? "") 
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.textColor = .white
+        cell.textLabel?.font = UIFont (name: "Chalkduster", size: 18)
         return cell
     }
     

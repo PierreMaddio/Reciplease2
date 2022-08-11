@@ -59,6 +59,7 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
         }
         let recipe = recipes[indexPath.row]
         cell.configure(recipe: recipe)
+        
         return cell
     }
     

@@ -13,8 +13,10 @@ protocol HTTPClient {
     func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, AFError>) -> Void)
 }
 
+// cette logique est disponible pour chaque objet HTTPClient donc pour la production et le mock
 extension HTTPClient {
     func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
+        
         guard let data = response.data else {
             completion(.failure(.responseValidationFailed(reason: .dataFileNil)))
             return
