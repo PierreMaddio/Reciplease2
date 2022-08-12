@@ -23,11 +23,20 @@ class Reciplease2UITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
+
         let app = XCUIApplication()
         app.launch()
+        app.textFields["Lemon, Cheese, Sausages..."].tap()
+        
+        let addStaticText = app/*@START_MENU_TOKEN@*/.staticTexts["Add"]/*[[".buttons[\"Add\"].staticTexts[\"Add\"]",".staticTexts[\"Add\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        addStaticText.tap()
+        addStaticText.tap()
+        app/*@START_MENU_TOKEN@*/.staticTexts["Search for recipes"]/*[[".buttons[\"Search for recipes\"].staticTexts[\"Search for recipes\"]",".staticTexts[\"Search for recipes\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func test2() throws {
+        
     }
 
     func testLaunchPerformance() throws {

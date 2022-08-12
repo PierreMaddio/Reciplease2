@@ -164,6 +164,20 @@ class RecipeServiceTestCase: XCTestCase {
 //        }
 //        waitForExpectations(timeout: 1)
 //    }
+//
+//    func testListRecipeViewController() throws {
+//        let sb = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+//        let vc = sb.instantiateViewController(withIdentifier: "list")
+//        vc.loadView()
+//        vc.view
+//        vc.tableRecipes.rowHeight = 44
+//        vc.viewDidLoad()
+//        vc.willMove(toParent: nil)
+//        vc.viewWillAppear(true)
+//        vc.viewWillDisappear(true)
+//        vc.viewDidAppear(true)
+//        ListRecipesViewControllerModel()
+//    }
 }
 
 

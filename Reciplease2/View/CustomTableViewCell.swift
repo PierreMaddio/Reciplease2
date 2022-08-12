@@ -20,6 +20,9 @@ class CustomTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         infoRecipeView.layer.cornerRadius = 10
+        
+        infoRecipeView.layer.borderWidth = 1
+        infoRecipeView.layer.borderColor = UIColor.white.cgColor
 
     }
     
