@@ -446,9 +446,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="infoRecipeView" destination="4HK-pe-0zN" id="Vnc-0E-LDf"/>
                                             <outlet property="recipeImage" destination="Zt5-6b-fBt" id="nWW-Mv-F3G"/>
                                             <outlet property="recipeIngredientsLabel" destination="8Uk-Ie-zM8" id="Hua-m4-e70"/>
                                             <outlet property="recipeLabel" destination="jZf-1A-06I" id="avN-Dz-rTs"/>
+                                            <outlet property="timeLabel" destination="K9r-De-5R0" id="4ii-zn-bCp"/>
+                                            <outlet property="yieldLabel" destination="gZJ-br-NXX" id="Jha-u2-YA3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

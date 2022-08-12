@@ -12,19 +12,23 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var recipeIngredientsLabel: UILabel!
     @IBOutlet weak var recipeImage: UIImageView!
-    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var infoRecipeView: UIView!
+    @IBOutlet weak var yieldLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        infoRecipeView.layer.cornerRadius = 10
 
     }
     
 //    private func addShadow() {
 //
-//        cellView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-//        cellView.layer.shadowRadius = 2.0
-//        cellView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-//        cellView.layer.shadowOpacity = 2.0
+//        infoRecipeView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
+//        infoRecipeView.layer.shadowRadius = 2.0
+//        infoRecipeView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//        infoRecipeView.layer.shadowOpacity = 2.0
 //     
 //    }
 
@@ -42,6 +46,9 @@ class CustomTableViewCell: UITableViewCell {
         }
         recipeIngredientsLabel.text = strIngredient
         recipeImage.downloaded(from: recipe.image!)
+        yieldLabel.text = "\(recipe.yield) p"
+        timeLabel.text = "\(recipe.totalTime ?? 30) m"
     }
     
 }
+
