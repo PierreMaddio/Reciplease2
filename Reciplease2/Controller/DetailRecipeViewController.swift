@@ -13,6 +13,7 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
     @IBOutlet weak var getDirectionButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var infoRecipeView: UIView!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -31,6 +32,10 @@ class DetailRecipeViewController: UIViewController {
         titleRecipeLabel.text = recipe?.label
         yieldLabel.text = "\(recipe?.yield ?? 0)"
         timeLabel.text = "\(recipe?.totalTime ?? 0)"
+        
+        infoRecipeView.layer.cornerRadius = 10
+        infoRecipeView.layer.borderWidth = 1
+        infoRecipeView.layer.borderColor = UIColor.white.cgColor
         
     }
     

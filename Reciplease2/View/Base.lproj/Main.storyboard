@@ -632,6 +632,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="getDirectionButton" destination="goq-zJ-vQf" id="8GK-sg-mOH"/>
+                        <outlet property="infoRecipeView" destination="sGS-VK-A0A" id="cQL-lp-ybK"/>
                         <outlet property="recipeImageView" destination="bzm-Hs-k8j" id="er8-Yu-hIh"/>
                         <outlet property="tableView" destination="05o-Re-nhs" id="ox9-eu-xJh"/>
                         <outlet property="timeLabel" destination="ZUc-BL-Sbx" id="xXc-NA-Cct"/>
