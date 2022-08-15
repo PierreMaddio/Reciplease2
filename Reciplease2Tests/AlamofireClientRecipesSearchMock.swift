@@ -12,7 +12,10 @@ class AlamofireClientRecipesSearchMock: HTTPClient {
     func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
         
         let bundle = Bundle(for: RecipeServiceTestCase.self)
-        let json = NSDataAsset(name: "Recipe", bundle: bundle)!.data
+        //let json = NSDataAsset(name: "Edamam", bundle: bundle)!.data
+        let url = bundle.url(forResource: "Edamam", withExtension: "json")!
+        let json = try! Data(contentsOf: url)
+
 
         let dataResponse = AFDataResponse<Data?>.init(request: nil, response: nil, data: json, metrics: nil, serializationDuration: .zero, result: .success(json))
         
@@ -20,14 +23,14 @@ class AlamofireClientRecipesSearchMock: HTTPClient {
     }
 }
 
-class AlamofireClientRecipesSearchMockFail: HTTPClient {
-    func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
-        
-        let bundle = Bundle(for: RecipeServiceTestCase.self)
-        let json = NSDataAsset(name: "Recipe-WithBrokenHitsField", bundle: bundle)!.data
-
-        let dataResponse = AFDataResponse<Data?>.init(request: nil, response: nil, data: json, metrics: nil, serializationDuration: .zero, result: .success(json))
-        
-        self.decodeRecipesSearch(from: dataResponse, completion: completion)
-    }
-}
+//class AlamofireClientRecipesSearchMockFail: HTTPClient {
+//    func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
+//        
+//        let bundle = Bundle(for: RecipeServiceTestCase.self)
+//        let json = NSDataAsset(name: "Recipe-WithBrokenHitsField", bundle: bundle)!.data
+//
+//        let dataResponse = AFDataResponse<Data?>.init(request: nil, response: nil, data: json, metrics: nil, serializationDuration: .zero, result: .success(json))
+//        
+//        self.decodeRecipesSearch(from: dataResponse, completion: completion)
+//    }
+//}

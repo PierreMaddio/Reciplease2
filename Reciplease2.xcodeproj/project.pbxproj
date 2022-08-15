@@ -23,12 +23,12 @@
 		FA095332288D4AA700EEC3EA /* ListRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095331288D4AA700EEC3EA /* ListRecipesViewController.swift */; };
 		FA095334288D650F00EEC3EA /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */; };
 		FA095336288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095335288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift */; };
+		FA2EBF7028AA717A00BDDF5C /* Edamam.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2EBF6F28AA717A00BDDF5C /* Edamam.json */; };
 		FA7637F428A1A46400EA4FC1 /* RecipeServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */; };
 		FA7C197628A4F51900E6F1A3 /* AlamofireClientRecipesSearchMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchMock.swift */; };
 		FA81F1EA28A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1E928A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift */; };
 		FA81F1F328A3EC4600CD5804 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */; };
 		FA81F1F428A3EC4600CD5804 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */; };
-		FA81F1F628A4114000CD5804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA81F1F528A4114000CD5804 /* Assets.xcassets */; };
 		FA81F1F928A431BE00CD5804 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */; };
 		FAC9C4AE289DA94700C4381F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4AD289DA94700C4381F /* ApiService.swift */; };
 		FAC9C4B2289E5D7200C4381F /* RecipesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */; };
@@ -79,12 +79,12 @@
 		FA095331288D4AA700EEC3EA /* ListRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRecipesViewController.swift; sourceTree = "<group>"; };
 		FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		FA095335288D65BF00EEC3EA /* DetailFavoritesRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFavoritesRecipesViewController.swift; sourceTree = "<group>"; };
+		FA2EBF6F28AA717A00BDDF5C /* Edamam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Edamam.json; sourceTree = "<group>"; };
 		FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTestCase.swift; sourceTree = "<group>"; };
 		FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClientRecipesSearchMock.swift; sourceTree = "<group>"; };
 		FA81F1E928A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClientRecipesSearch.swift; sourceTree = "<group>"; };
 		FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		FA81F1F528A4114000CD5804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		FAC9C4AD289DA94700C4381F /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearch.swift; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 			children = (
 				FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */,
 				FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchMock.swift */,
-				FA81F1F528A4114000CD5804 /* Assets.xcassets */,
+				FA2EBF6F28AA717A00BDDF5C /* Edamam.json */,
 			);
 			path = Reciplease2Tests;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA81F1F628A4114000CD5804 /* Assets.xcassets in Resources */,
+				FA2EBF7028AA717A00BDDF5C /* Edamam.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
