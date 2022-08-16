@@ -168,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FA81F1F728A4318C00CD5804 /* Extensions */,
+				FA2EBF7528AC281100BDDF5C /* CoreData */,
 				FAF29D2028945C45005B4A36 /* Network */,
 				FA095330288C2C2200EEC3EA /* Model */,
 				FA0953212886F68500EEC3EA /* View */,
@@ -222,7 +223,6 @@
 		FA095330288C2C2200EEC3EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA0952CE2881F6AC00EEC3EA /* Reciplease2.xcdatamodeld */,
 				FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */,
 			);
 			path = Model;
@@ -237,6 +237,14 @@
 				FA0952D62881F6AF00EEC3EA /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA2EBF7528AC281100BDDF5C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA0952CE2881F6AC00EEC3EA /* Reciplease2.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FA81F1F728A4318C00CD5804 /* Extensions */ = {

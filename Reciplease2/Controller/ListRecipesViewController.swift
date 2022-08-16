@@ -30,9 +30,9 @@ class ListRecipesViewController: UIViewController {
                 self.tableRecipes.reloadData()
             case .failure(let err):
                 if case AFError.responseSerializationFailed(reason:) = err {
-                    
+
                 } else {
-                    
+
                 }
             }
         }
