@@ -589,6 +589,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="getDirectionButtonAction:" destination="vJy-4m-sEb" eventType="touchUpInside" id="1Sl-k2-PGR"/>
                                     <action selector="searchButtonAction:" destination="GGb-Cd-4cE" eventType="touchUpInside" id="03T-ei-5fI"/>
                                 </connections>
                             </button>

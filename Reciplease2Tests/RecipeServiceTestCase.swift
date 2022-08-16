@@ -49,6 +49,9 @@ class RecipeServiceTestCase: XCTestCase {
                 let totalTime = obj.hits[0].recipe.totalTime
                 XCTAssertEqual(totalTime, 30)
                 
+                let hrefNextTwentyRecipes = obj.links.next.href
+                XCTAssertEqual(hrefNextTwentyRecipes, "https://api.edamam.com/api/recipes/v2")
+                
                 expectation.fulfill()
             case .failure:
                 XCTFail("Something wrong with my model")

@@ -4,7 +4,7 @@
     "count": 10000,
     "_links": {
         "next": {
-            "href": "https://api.edamam.com/api/recipes/v2?q=chicken%2C%20lemon&app_key=c4ed16eb0795215c47de2959c93d00c4&_cont=CHcVQBtNNQphDmgVQntAEX4BYVdtDQUBQG1BAWMTYFd0BQYVX3dDC2RCalJ3AwUHRzNEATETa1Z2BlYGS2VBBWoXNQYiBhFqX3cWQT1OcV9xBB8VADQWVhFCPwoxXVZEITQeVDcBaR4-SQ%3D%3D&type=public&app_id=7d167a47",
+            "href": "https://api.edamam.com/api/recipes/v2",
             "title": "Next page"
         }
     },
