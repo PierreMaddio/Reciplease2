@@ -50,7 +50,7 @@ class CustomTableViewCell: UITableViewCell {
         recipeIngredientsLabel.text = strIngredient
         recipeImage.downloaded(from: recipe.image!)
         yieldLabel.text = "\(recipe.yield) p"
-        timeLabel.text = "\(recipe.totalTime ?? 30) m"
+        timeLabel.text = "\(recipe.totalTime ?? 0) m"
     }
     
 }

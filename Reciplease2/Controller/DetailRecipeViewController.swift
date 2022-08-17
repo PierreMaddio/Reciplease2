@@ -31,8 +31,8 @@ class DetailRecipeViewController: UIViewController {
             recipeImageView.image = UIImage(named: "recipe")
         }
         titleRecipeLabel.text = recipe?.label
-        yieldLabel.text = "\(recipe?.yield ?? 0)"
-        timeLabel.text = "\(recipe?.totalTime ?? 0)"
+        yieldLabel.text = "\(recipe?.yield ?? 0) p"
+        timeLabel.text = "\(recipe?.totalTime ?? 0) m"
         
         infoRecipeView.layer.cornerRadius = 10
         infoRecipeView.layer.borderWidth = 1

@@ -345,7 +345,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RTE-VU-Gov">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                                 <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="118" id="SNe-HV-dj1" customClass="CustomTableViewCell" customModule="Reciplease2" customModuleProvider="target">
@@ -462,7 +462,7 @@
                         <constraints>
                             <constraint firstItem="lIV-eu-ekL" firstAttribute="trailing" secondItem="RTE-VU-Gov" secondAttribute="trailing" id="P5M-bV-w6u"/>
                             <constraint firstItem="RTE-VU-Gov" firstAttribute="leading" secondItem="lIV-eu-ekL" secondAttribute="leading" id="idi-mP-ApQ"/>
-                            <constraint firstItem="lIV-eu-ekL" firstAttribute="bottom" secondItem="RTE-VU-Gov" secondAttribute="bottom" constant="50" id="nFa-JO-Lhr"/>
+                            <constraint firstItem="lIV-eu-ekL" firstAttribute="bottom" secondItem="RTE-VU-Gov" secondAttribute="bottom" id="nFa-JO-Lhr"/>
                             <constraint firstItem="RTE-VU-Gov" firstAttribute="top" secondItem="lIV-eu-ekL" secondAttribute="top" id="nbH-hP-6Wg"/>
                         </constraints>
                     </view>
@@ -594,7 +594,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="05o-Re-nhs">
-                                <rect key="frame" x="0.0" y="277" width="375" height="207"/>
+                                <rect key="frame" x="0.0" y="277" width="375" height="199"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="1pG-bC-BVL">
@@ -613,7 +613,7 @@
                         <color key="backgroundColor" red="0.21608519549999999" green="0.1999332607" blue="0.19980707759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="GAx-eY-Wdc" firstAttribute="top" secondItem="Ske-pz-mo4" secondAttribute="top" id="CZL-85-1gF"/>
-                            <constraint firstItem="goq-zJ-vQf" firstAttribute="top" secondItem="05o-Re-nhs" secondAttribute="bottom" id="LWy-Sb-d5L"/>
+                            <constraint firstItem="goq-zJ-vQf" firstAttribute="top" secondItem="05o-Re-nhs" secondAttribute="bottom" constant="8" id="LWy-Sb-d5L"/>
                             <constraint firstItem="Ske-pz-mo4" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="goq-zJ-vQf" secondAttribute="trailing" constant="20" id="LwV-tU-x5A"/>
                             <constraint firstItem="7hC-qH-MlJ" firstAttribute="top" secondItem="GAx-eY-Wdc" secondAttribute="bottom" constant="3" id="M8m-Bg-zVv"/>
                             <constraint firstItem="7hC-qH-MlJ" firstAttribute="leading" secondItem="Ske-pz-mo4" secondAttribute="leading" constant="10" id="R0Z-YH-TGp"/>
