@@ -23,7 +23,6 @@ case errorNetwork, errorIngredientneeded, errorNoResult
         }
     }
     
-    // global  Error messages
     var message: String {
         switch self {
         case .errorNetwork:

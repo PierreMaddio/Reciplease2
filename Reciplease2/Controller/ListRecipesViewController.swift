@@ -69,5 +69,35 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
             navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//            // #warning Incomplete implementation, return the number of sections
+//            return 1
+//        }
+//
+//    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//            let middle = recipeSearch.listRecipe.count / 2
+//            if indexPath.section == tableView.numberOfSections - 1 &&
+//                indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - middle {
+//                scroll(tableViewList)
+//            }
+//        }
+//
+//        override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//            self.lastContentOffset = scrollView.contentOffset.y
+//        }
+//
+//        private func scroll(_ scrollView: UIScrollView) {
+//            if (self.lastContentOffset < scrollView.contentOffset.y) {
+//                if recipeSearch.listRecipe.count == 100 {
+//                    return presentAlert(error: ErrorMessage.limitResult)
+//                }
+//                
+//                recipeSearch.prepareForRequestInTableView()
+//               
+//                
+//                recipeSearch.executeRequest(ingredient: self.recipeSearch.ingredientList)
+//            }
+//        }
 }
 

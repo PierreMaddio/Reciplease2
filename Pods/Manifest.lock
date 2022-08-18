@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.6.2)
+  - PaginatedTableView (1.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - PaginatedTableView
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - PaginatedTableView
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  PaginatedTableView: 294d9831d5ddf5c0dcfbb4a281d4fcfb8d12f55a
 
-PODFILE CHECKSUM: 96ba701ef8a9731cfcb70616d05ff04826571519
+PODFILE CHECKSUM: f054b1dba2b6ba3bead819e7f89932faa8690447
 
 COCOAPODS: 1.11.3
