@@ -9,29 +9,29 @@ import Foundation
 import Alamofire
 
 protocol HTTPClient {
-    func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void)
-    func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, AFError>) -> Void)
+    func request(url: URL, completion: @escaping (Result<RecipesSearch, Error>) -> Void)
+    func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, Error>) -> Void)
 }
 
 // cette logique est disponible pour chaque objet HTTPClient donc pour la production et le mock
 extension HTTPClient {
-    func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
+    func decodeRecipesSearch(from response: AFDataResponse<Data?>, completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
         
         guard let data = response.data else {
-            completion(.failure(.responseValidationFailed(reason: .dataFileNil)))
+            completion(.failure(RecipleaseError.errorNetwork))
             return
         }
         do {
             let recipes = try JSONDecoder().decode(RecipesSearch.self, from: data)
             completion(.success(recipes))
         } catch {
-            completion(.failure(.responseSerializationFailed(reason: .decodingFailed(error: ApiError.decodingFailedBecauseOfModelIsWrong))))
+            completion(.failure(RecipleaseError.errorParsingJson))
         }
     }
 }
 
 class AlamofireClientRecipesSearch: HTTPClient {
-    func request(url: URL, completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
+    func request(url: URL, completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
         AF.request(
             url,
             method: .get,

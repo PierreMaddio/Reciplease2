@@ -8,12 +8,12 @@
 import Foundation
 
 enum RecipleaseError: Error {
-case errorNetwork, errorIngredientneeded, errorNoResult
+case errorNetwork, errorIngredientneeded, errorNoResult, errorParsingJson
     
     
     var title: String {
         switch self {
-        case .errorNetwork:
+        case .errorNetwork, .errorParsingJson:
             return "Alert Network"
             // Search recipe Error messages
         case .errorIngredientneeded:
@@ -27,6 +27,8 @@ case errorNetwork, errorIngredientneeded, errorNoResult
         switch self {
         case .errorNetwork:
             return "NetWork error"
+        case .errorParsingJson:
+            return "No parsing Json"
         case .errorIngredientneeded:
             return "Need some ingredients"
         case .errorNoResult:
@@ -34,3 +36,4 @@ case errorNetwork, errorIngredientneeded, errorNoResult
         }
     }
 }
+

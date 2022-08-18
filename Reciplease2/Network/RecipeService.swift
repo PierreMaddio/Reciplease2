@@ -22,7 +22,7 @@ class RecipeService {
         self.httpClient = httpClient
     }
     
-    func getRecipes(completion: @escaping (Result<RecipesSearch, AFError>) -> Void) {
+    func getRecipes(completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
         httpClient.request(url: url, completion: completion)
     }
 }
