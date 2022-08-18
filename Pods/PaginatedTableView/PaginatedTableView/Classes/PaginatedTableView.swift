@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc public protocol PaginatedTableViewDataSource: class {
+@objc public protocol PaginatedTableViewDataSource: AnyObject {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func numberOfSections(in tableView: UITableView) -> Int
@@ -17,7 +17,7 @@ import UIKit
     @objc optional func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath)
 }
 
-@objc public protocol PaginatedTableViewDelegate: class {
+@objc public protocol PaginatedTableViewDelegate: AnyObject {
     @objc optional func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     @objc optional func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
