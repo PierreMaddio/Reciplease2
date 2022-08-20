@@ -10,7 +10,6 @@ import Foundation
 enum RecipleaseError: Error {
 case errorNetwork, errorIngredientneeded, errorNoResult, errorParsingJson
     
-    
     var title: String {
         switch self {
         case .errorNetwork, .errorParsingJson:

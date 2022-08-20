@@ -22,7 +22,7 @@ class RecipeServiceTestCase: XCTestCase {
     
     func testModelDecode() {
         let urlFake = ApiService.completeUrlRequest(ingredients: ingredients)
-        let alamofireClientRecipesSearchMock = AlamofireClientRecipesSearchMock()
+        let alamofireClientRecipesSearchMock = AlamofireClientRecipesSearchFake()
         
         let expectation = expectation(description: "")
         alamofireClientRecipesSearchMock.request(url: urlFake) { result in

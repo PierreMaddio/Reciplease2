@@ -8,10 +8,6 @@
 import Foundation
 import Alamofire
 
-enum ApiError: Error {
-    case decodingFailedBecauseOfModelIsWrong
-}
-
 class RecipeService {
     
     private let url: URL
