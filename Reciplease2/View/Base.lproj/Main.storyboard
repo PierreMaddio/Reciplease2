@@ -470,7 +470,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ubo-sq-zrl"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableRecipes" destination="RTE-VU-Gov" id="lTX-0B-26l"/>
+                        <outlet property="tableView" destination="RTE-VU-Gov" id="NRP-zC-Vxo"/>
                         <segue destination="vJy-4m-sEb" kind="show" identifier="ShowDetailRecipe" id="wmX-0c-Q2v"/>
                     </connections>
                 </viewController>
