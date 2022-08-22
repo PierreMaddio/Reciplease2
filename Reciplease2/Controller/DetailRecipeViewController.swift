@@ -44,11 +44,12 @@ class DetailRecipeViewController: UIViewController {
         buttonIsClicked()
     }
     
-    
+    // quitter l'appli et lancer safari avec le lien de la page de la recette
     private func directionSafari(for url: String) {
         guard let url = URL(string: url) else {
             return
         }
+        //
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true)
     }

@@ -82,28 +82,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="eQC-tg-GlC"/>
                     <connections>
-                        <segue destination="AMc-Q1-cVD" kind="show" identifier="ShowFavoriteListRecipes" id="cgj-Ff-Bgl"/>
+                        <segue destination="vJy-4m-sEb" kind="show" identifier="favoriteShowDetailRecipe" id="wPe-Re-2ra"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KZZ-g5-fgO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417.75700934579436" y="631.74946004319656"/>
-        </scene>
-        <!--Detail Favorites Recipes View Controller-->
-        <scene sceneID="YJX-xL-tUm">
-            <objects>
-                <viewController id="AMc-Q1-cVD" userLabel="Detail Favorites Recipes View Controller" customClass="DetailFavoritesRecipesViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mol-x0-VCo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="mau-6U-gcA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="jz4-nM-X0Z"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZAq-Qc-Dcr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1227" y="632"/>
         </scene>
         <!--Search-->
         <scene sceneID="g7M-fv-abL">
@@ -483,11 +467,11 @@
             <objects>
                 <viewController storyboardIdentifier="detailRecipe" id="vJy-4m-sEb" userLabel="Detail Recipe View Controller" customClass="DetailRecipeViewController" customModule="Reciplease2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fDp-ZL-QnF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAx-eY-Wdc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="250"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant" translatesAutoresizingMaskIntoConstraints="NO" id="bzm-Hs-k8j">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
@@ -570,14 +554,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hC-qH-MlJ">
-                                <rect key="frame" x="10" y="253" width="355" height="24"/>
+                                <rect key="frame" x="10" y="297" width="355" height="24"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goq-zJ-vQf">
-                                <rect key="frame" x="20" y="484" width="335" height="50"/>
+                                <rect key="frame" x="20" y="528" width="335" height="50"/>
                                 <color key="backgroundColor" red="0.25269943480000001" green="0.58832329510000003" blue="0.3566073179" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ca3-Iu-dVc"/>
@@ -594,7 +578,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="05o-Re-nhs">
-                                <rect key="frame" x="0.0" y="277" width="375" height="199"/>
+                                <rect key="frame" x="0.0" y="321" width="375" height="199"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="1pG-bC-BVL">
@@ -643,9 +627,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaH-LA-U8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045.5999999999999" y="-60.719640179910051"/>
+            <point key="canvasLocation" x="2178" y="270"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wPe-Re-2ra"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Servings" width="25" height="25"/>
         <image name="Time" width="25" height="25"/>

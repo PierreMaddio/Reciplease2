@@ -7,15 +7,17 @@
 
 import UIKit
 import Alamofire
-//import PaginatedTableView
+import PaginatedTableView
 
 class ListRecipesViewController: UIViewController {
     
     var recipes = [Recipe]()
     var ingredients: [String] = []
+    var href: String = ""
+    let service = RecipeService(httpClient: AlamofireClientRecipesSearch())
     
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet weak var tableView: PaginatedTableView!
+    //@IBOutlet weak var paginatedTableView: PaginatedTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,17 @@ class ListRecipesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let service = RecipeService(url: ApiService.completeUrlRequest(ingredients: ingredients), httpClient: AlamofireClientRecipesSearch())
+        fetchData()
         
-        service.getRecipes { result in
+    }
+    
+    func fetchData() {
+        let url = ApiService.completeUrlRequest(ingredients: ingredients)
+        
+        service.getRecipes(url: url) { result in
             switch result {
             case .success(let obj):
+                self.href = obj.links.next.href
                 self.recipes = obj.hits.map { $0.recipe }
                 self.tableView.reloadData()
             case .failure(_):
@@ -36,13 +44,13 @@ class ListRecipesViewController: UIViewController {
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowDetailRecipe" {
-//            if let destinationVc = segue.destination as? DetailRecipeViewController {
-//                destinationVc.recipes = self.recipes
-//            }
-//        }
-//    }
+    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if segue.identifier == "ShowDetailRecipe" {
+    //            if let destinationVc = segue.destination as? DetailRecipeViewController {
+    //                destinationVc.recipes = self.recipes
+    //            }
+    //        }
+    //    }
 }
 
 extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -66,6 +74,28 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
             vc.recipe = recipes[indexPath.row]
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    // pagination
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == recipes.count - 1 {
+            let url = URL(string: href)
+            service.getRecipes(url: url!) { result in
+                switch result {
+                case .success(let obj):
+                    self.href = obj.links.next.href
+                    self.recipes += obj.hits.map { $0.recipe }
+                    self.tableView.reloadData()
+                case .failure(_):
+                    break
+                }
+            }
+        }
+    }
+    
+    @objc func loadTable() {
+        self.tableView.reloadData()
     }
     
 }

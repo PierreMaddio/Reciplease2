@@ -7,14 +7,14 @@
 
 import CoreData
 
-//@objc(RecipleaseCoreData)
-//class RecipleaseCoreData: NSManagedObject {
-//    
-//    @NSManaged public var image: String?
-//    @NSManaged public var ingredientLines: [String]?
-//    @NSManaged public var label: String?
-//    @NSManaged public var totalTime: Int16
-//    @NSManaged public var url: String?
-//    @NSManaged public var yield: Int16
-//
-//}
+@objc(RecipleaseCoreData)
+class RecipleaseCoreData: NSManagedObject {
+    
+    @NSManaged public var image: String?
+    @NSManaged public var ingredientLines: [String]?
+    @NSManaged public var label: String?
+    @NSManaged public var totalTime: String?
+    @NSManaged public var url: String?
+    @NSManaged public var yield: String?
+
+}

@@ -10,15 +10,14 @@ import Alamofire
 
 class RecipeService {
     
-    private let url: URL
     private let httpClient: HTTPClient
     
-    init(url: URL, httpClient: HTTPClient) {
-        self.url = url
+    init(httpClient: HTTPClient) {
+        
         self.httpClient = httpClient
     }
     
-    func getRecipes(completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
+    func getRecipes(url: URL, completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
         httpClient.request(url: url, completion: completion)
     }
 }
