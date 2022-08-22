@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class DetailRecipeViewController: UIViewController {
     
@@ -44,17 +43,15 @@ class DetailRecipeViewController: UIViewController {
         buttonIsClicked()
     }
     
-    // quitter l'appli et lancer safari avec le lien de la page de la recette
-    private func directionSafari(for url: String) {
-        guard let url = URL(string: url) else {
-            return
+    // leave the app and launch safari with the link to the recipe page
+    func open(scheme: String) {
+        if let url = URL(string: scheme) {
+            UIApplication.shared.open(url)
         }
-        //
-        let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true)
     }
+    
     func buttonIsClicked() {
-        directionSafari(for: recipe?.url ?? "")
+        open(scheme: recipe?.url ?? "")
     }
 
 }

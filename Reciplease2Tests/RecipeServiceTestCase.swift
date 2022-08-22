@@ -59,14 +59,6 @@ class RecipeServiceTestCase: XCTestCase {
         }
         waitForExpectations(timeout: 1)
     }
-    
-    func testCompareHref() {
-        let href1 = "CHcVQBtNNQphDmgVQntAEX4BYVdtDQUBQG1BAWMTYFd0BQYVX3dDC2RCalJ3AwUHRzNEATETa1Z2BlYGS2VBBWoXNQYiBhFqX3cWQT1OcV93BB8VADQWVhFCPwoxXVZEITQeVDcBaR4-SQ%3D%3D"
-        
-        let href2 = "CHcVQBtNNQphDmgVQntAEX4BYVdtDQUBQG1BAWMTYFd0BQYVX3dDC2RCalJ3AwUHRzNEATETa1Z2BlYGS2VBBWoXNQYiBhFqX3cWQT1OcV9xBB8VADQWVhFCPwoxXVZEITQeVDcBaR4-SQ%3D%3D"
-        
-        XCTAssertNotEqual(href1, href2)
-    }
 
 }
 

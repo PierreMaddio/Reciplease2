@@ -13,7 +13,6 @@ class RecipeService {
     private let httpClient: HTTPClient
     
     init(httpClient: HTTPClient) {
-        
         self.httpClient = httpClient
     }
     
