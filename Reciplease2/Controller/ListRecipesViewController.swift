@@ -80,8 +80,12 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         if indexPath.row == recipes.count - 1 {
+            
+            self.tableView.tableFooterView = createSpinnerFooter()
+            
             let url = URL(string: href)
             service.getRecipes(url: url!) { result in
+                self.tableView.tableFooterView = nil
                 switch result {
                 case .success(let obj):
                     self.href = obj.links.next.href
@@ -96,6 +100,18 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
     
     @objc func loadTable() {
         self.tableView.reloadData()
+    }
+    
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+        
+        let spinner = UIActivityIndicatorView()
+        spinner.color = .white
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        
+        return footerView
     }
     
 }
