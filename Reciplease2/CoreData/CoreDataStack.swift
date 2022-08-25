@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 open class CoreDataStack {
-  public static let modelName = "RecipleaseCoreData"
+  public static let modelName = "Reciplease2"
 
   public static let model: NSManagedObjectModel = {
     // swiftlint:disable force_unwrapping

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailRecipeViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var infoRecipeView: UIView!
     @IBOutlet weak var yieldLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIBarButtonItem!
+    
     
     var recipe: Recipe?
     
@@ -36,6 +39,27 @@ class DetailRecipeViewController: UIViewController {
         infoRecipeView.layer.cornerRadius = 10
         infoRecipeView.layer.borderWidth = 1
         infoRecipeView.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    
+    @IBAction func markAsFavorite(_ sender: Any) {
+        let managedObjectContext = AppDelegate.sharedAppDelegate.persistentContainer.viewContext
+        guard  let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext) else {
+            print("Unable to get entity")
+            return }
+        let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
+        favoriteEntity.setValue(recipe?.image ?? "", forKey: "image")
+        favoriteEntity.setValue(recipe?.label ?? "", forKey: "label")
+        favoriteEntity.setValue("\(recipe?.totalTime ?? 0)", forKey: "totalTime")
+        favoriteEntity.setValue("\((recipe?.ingredientLines ?? [String]()).joined(separator: "$j%^"))", forKey: "ingredientLines")
+        favoriteEntity.setValue(recipe?.url ?? "", forKey: "url")
+        favoriteEntity.setValue("\(recipe?.yield ?? 0)", forKey: "yield")
+        
+        do {
+            try managedObjectContext.save()
+        } catch let error {
+            print("Error saving entry == \(error.localizedDescription)")
+        }
         
     }
     

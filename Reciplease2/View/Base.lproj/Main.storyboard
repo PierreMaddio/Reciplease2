@@ -82,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="eQC-tg-GlC"/>
                     <connections>
+                        <outlet property="tableFavoriteRecipes" destination="WVw-vk-XJi" id="Gpq-UZ-7zT"/>
                         <segue destination="vJy-4m-sEb" kind="show" identifier="favoriteShowDetailRecipe" id="wPe-Re-2ra"/>
                     </connections>
                 </viewController>
@@ -613,9 +614,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="SCq-NZ-Aab">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="gbx-eu-kJR"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="gbx-eu-kJR">
+                            <connections>
+                                <action selector="markAsFavorite:" destination="vJy-4m-sEb" id="slx-23-EgG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoriteButton" destination="gbx-eu-kJR" id="kos-jo-Dat"/>
                         <outlet property="getDirectionButton" destination="goq-zJ-vQf" id="8GK-sg-mOH"/>
                         <outlet property="infoRecipeView" destination="sGS-VK-A0A" id="cQL-lp-ybK"/>
                         <outlet property="recipeImageView" destination="bzm-Hs-k8j" id="er8-Yu-hIh"/>
