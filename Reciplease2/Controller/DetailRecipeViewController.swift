@@ -19,7 +19,6 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     
-    
     var recipe: Recipe?
     
     override func viewDidLoad() {
@@ -60,6 +59,8 @@ class DetailRecipeViewController: UIViewController {
         } catch let error {
             print("Error saving entry == \(error.localizedDescription)")
         }
+        
+        favoriteButton.tintColor = .green
         
     }
     

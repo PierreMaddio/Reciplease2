@@ -31,7 +31,7 @@ class FavoritesRecipesViewController: UIViewController {
         
         do {
             let result = try managedObjectContext.fetch(fetchRequest)
-            print("Result cunt = =\(result.count)")
+            print("Result count =\(result.count)")
             self.favoriteRecipes.removeAll()
             for favorite in result as! [NSManagedObject] {
                 guard let label = favorite.value(forKey: "label") as? String else {return}
@@ -64,18 +64,35 @@ extension FavoritesRecipesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "FavRecipe")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "FavRecipe")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomTableViewCell else {
+            return UITableViewCell()
         }
-        let favRecipe = self.favoriteRecipes[indexPath.row]
-        cell?.textLabel?.text = favRecipe.label
-        return cell!
+        let recipe = favoriteRecipes[indexPath.row]
+        cell.configure(recipe: recipe)
+        
+        return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "detailRecipe") as? DetailRecipeViewController {
+            vc.recipe = favoriteRecipes[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        var cell = tableView.dequeueReusableCell(withIdentifier: "FavRecipe")
+//        if cell == nil {
+//            cell = UITableViewCell(style: .default, reuseIdentifier: "FavRecipe")
+//        }
+//        let favRecipe = self.favoriteRecipes[indexPath.row]
+//        cell?.textLabel?.text = favRecipe.label
+//        return cell!
+//    }
 }
 
 extension FavoritesRecipesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44.0
+        return 118.0
     }
 }
