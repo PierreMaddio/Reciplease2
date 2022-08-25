@@ -5,10 +5,14 @@
 //  Created by Pierre on 19/08/2022.
 //
 
+import Foundation
 import CoreData
 
-@objc(RecipleaseCoreData)
-class RecipleaseCoreData: NSManagedObject {
+extension RecipleaseCoreData {
+    @nonobjc
+    public class func fetchRequest() -> NSFetchRequest<RecipleaseCoreData> {
+        return NSFetchRequest<RecipleaseCoreData>(entityName: "RecipleaseCoreData")
+    }
     
     @NSManaged public var image: String?
     @NSManaged public var ingredientLines: [String]?
@@ -16,5 +20,5 @@ class RecipleaseCoreData: NSManagedObject {
     @NSManaged public var totalTime: String?
     @NSManaged public var url: String?
     @NSManaged public var yield: String?
-
+    
 }
