@@ -39,7 +39,7 @@ class DetailRecipeViewController: UIViewController {
         infoRecipeView.layer.borderWidth = 1
         infoRecipeView.layer.borderColor = UIColor.white.cgColor
         
-        let isRecipeFavorite = self.CheckIfFavorite()
+        let isRecipeFavorite = self.checkIfFavorite()
         self.recipe?.isFavorite = isRecipeFavorite
         if isRecipeFavorite {
             self.favoriteButton.tintColor = .green
@@ -47,65 +47,28 @@ class DetailRecipeViewController: UIViewController {
     }
     
     @IBAction func markAsFavorite(_ sender: Any) {
-        let managedObjectContext = AppDelegate.sharedAppDelegate.persistentContainer.viewContext
-        
-        if self.recipe?.isFavorite ?? false {
-            favoriteButton.tintColor = UIColor.white
-            self.deleteFromFavorite()
-        } else {
-            guard  let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext) else {
-                print("Unable to get entity")
-                return }
-            
-            let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
-            favoriteEntity.setValue(recipe?.image ?? "", forKey: "image")
-            favoriteEntity.setValue(recipe?.label ?? "", forKey: "label")
-            favoriteEntity.setValue("\(recipe?.totalTime ?? 0)", forKey: "totalTime")
-            favoriteEntity.setValue("\((recipe?.ingredientLines ?? [String]()).joined(separator: "$j%^"))", forKey: "ingredientLines")
-            favoriteEntity.setValue(recipe?.url ?? "", forKey: "url")
-            favoriteEntity.setValue("\(recipe?.yield ?? 0)", forKey: "yield")
-            
-            do {
-                try managedObjectContext.save()
-            } catch let error {
-                print("Error saving entry == \(error.localizedDescription)")
+        guard let recipe = recipe else {
+            return
+        }
+
+        ManageCoreData.shared.markAsFavorite(recipe: recipe) {[weak self] isFavorite in
+            if isFavorite {
+                self?.favoriteButton.tintColor = UIColor.green
+            } else {
+                self?.favoriteButton.tintColor = .white
             }
-            
-            favoriteButton.tintColor = .green
         }
     }
     
-    func CheckIfFavorite() -> Bool {
+    func checkIfFavorite() -> Bool {
         guard let recipeName = self.recipe?.label else { return false }
-        let managedObjectContext = AppDelegate.sharedAppDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipleaseCoreData")
-        fetchRequest.predicate = NSPredicate(format: "label = %@", recipeName )
-        do {
-            let result = try managedObjectContext.fetch(fetchRequest)
-            return result.count == 1 ? true: false
-        } catch let error {
-            print("Error getting favorites == \(error.localizedDescription)")
-        }
-        return false
+        return ManageCoreData.shared.checkIfFavorite(recipeName: recipeName)
     }
     
     func deleteFromFavorite() {
         guard let recipeName = self.recipe?.label else {return }
-        let managedObjectContext = AppDelegate.sharedAppDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipleaseCoreData")
-        fetchRequest.predicate = NSPredicate(format: "label = %@", recipeName)
-        do {
-            let result = try managedObjectContext.fetch(fetchRequest)
-            for favorite in result as! [NSManagedObject] {
-                managedObjectContext.delete(favorite)
-            }
-            do {
-                try managedObjectContext.save()
-            } catch let error {
-                print("Error deleting entry == \(error.localizedDescription)")
-            }
-        } catch let error {
-            print("Error getting favorites == \(error.localizedDescription)")
+        ManageCoreData.shared.deleteFromFavorite(recipeName: recipeName) { success in
+            print("Deleted:: ", success)
         }
     }
     

@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer2: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "Reciplease2")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Saving support
     
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = persistentContainer2.viewContext
         if context.hasChanges {
             do {
                 try context.save()
