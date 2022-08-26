@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-public final class ManageCoreDataService {
+public final class ManageCoreData {
     // MARK: - Properties
     let managedObjectContext: NSManagedObjectContext
     let coreDataStack: CoreDataStack
@@ -21,7 +21,7 @@ public final class ManageCoreDataService {
 }
 
 // MARK: - Public
-extension ManageCoreDataService {
+extension ManageCoreData {
     @discardableResult
     public func add(label: String, image: String, url: String, ingredientLines: [String], yield: String, totalTime: String) -> RecipleaseCoreData {
         let recipeCD = RecipleaseCoreData(context: managedObjectContext)
@@ -36,7 +36,7 @@ extension ManageCoreDataService {
         return recipeCD
     }
     
-    public func getReports() -> [RecipleaseCoreData]? {
+    public func getRecipes() -> [RecipleaseCoreData]? {
         let reportFetch: NSFetchRequest<RecipleaseCoreData> = RecipleaseCoreData.fetchRequest()
         do {
             let results = try managedObjectContext.fetch(reportFetch)
@@ -48,13 +48,13 @@ extension ManageCoreDataService {
     }
     
     @discardableResult
-    public func update(_ report: RecipleaseCoreData) -> RecipleaseCoreData {
+    public func update(_ recipe: RecipleaseCoreData) -> RecipleaseCoreData {
         coreDataStack.saveContext(managedObjectContext)
-        return report
+        return recipe
     }
     
-    public func delete(_ report: RecipleaseCoreData) {
-        managedObjectContext.delete(report)
+    public func delete(_ recipe: RecipleaseCoreData) {
+        managedObjectContext.delete(recipe)
         coreDataStack.saveContext(managedObjectContext)
     }
 }

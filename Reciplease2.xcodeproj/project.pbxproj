@@ -26,12 +26,14 @@
 		FA2EBF7028AA717A00BDDF5C /* Edamam.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2EBF6F28AA717A00BDDF5C /* Edamam.json */; };
 		FA7637F428A1A46400EA4FC1 /* RecipeServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */; };
 		FA780F1328B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA780F1228B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift */; };
-		FA780F1528B7A00300663CED /* ManageCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA780F1428B7A00300663CED /* ManageCoreDataService.swift */; };
+		FA780F1528B7A00300663CED /* ManageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA780F1428B7A00300663CED /* ManageCoreData.swift */; };
 		FA7C197628A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */; };
 		FA81F1EA28A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1E928A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift */; };
 		FA81F1F328A3EC4600CD5804 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */; };
 		FA81F1F428A3EC4600CD5804 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */; };
 		FA81F1F928A431BE00CD5804 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */; };
+		FA83138028B8A2F80084BF66 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83137F28B8A2F80084BF66 /* TestCoreDataStack.swift */; };
+		FA83138228B8A6820084BF66 /* ManageCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83138128B8A6820084BF66 /* ManageCoreDataTests.swift */; };
 		FAC9C4AE289DA94700C4381F /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4AD289DA94700C4381F /* ApiService.swift */; };
 		FAC9C4B2289E5D7200C4381F /* RecipesSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */; };
 		FACA647328B00E8700D6F9C2 /* RecipleaseCoreData+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA647228B00E8700D6F9C2 /* RecipleaseCoreData+CoreDataProperties.swift */; };
@@ -86,12 +88,14 @@
 		FA2EBF6F28AA717A00BDDF5C /* Edamam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Edamam.json; sourceTree = "<group>"; };
 		FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTestCase.swift; sourceTree = "<group>"; };
 		FA780F1228B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipleaseCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
-		FA780F1428B7A00300663CED /* ManageCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCoreDataService.swift; sourceTree = "<group>"; };
+		FA780F1428B7A00300663CED /* ManageCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCoreData.swift; sourceTree = "<group>"; };
 		FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClientRecipesSearchFake.swift; sourceTree = "<group>"; };
 		FA81F1E928A2BD8300CD5804 /* AlamofireClientRecipesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClientRecipesSearch.swift; sourceTree = "<group>"; };
 		FA81F1F128A3EC4600CD5804 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		FA81F1F228A3EC4600CD5804 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		FA83137F28B8A2F80084BF66 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		FA83138128B8A6820084BF66 /* ManageCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCoreDataTests.swift; sourceTree = "<group>"; };
 		FAC9C4AD289DA94700C4381F /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		FAC9C4B1289E5D7200C4381F /* RecipesSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearch.swift; sourceTree = "<group>"; };
 		FACA647228B00E8700D6F9C2 /* RecipleaseCoreData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipleaseCoreData+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */,
 				FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */,
 				FA2EBF6F28AA717A00BDDF5C /* Edamam.json */,
+				FA83137F28B8A2F80084BF66 /* TestCoreDataStack.swift */,
+				FA83138128B8A6820084BF66 /* ManageCoreDataTests.swift */,
 			);
 			path = Reciplease2Tests;
 			sourceTree = "<group>";
@@ -260,7 +266,7 @@
 				FA0952CE2881F6AC00EEC3EA /* Reciplease2.xcdatamodeld */,
 				FACA647228B00E8700D6F9C2 /* RecipleaseCoreData+CoreDataProperties.swift */,
 				FA780F1228B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift */,
-				FA780F1428B7A00300663CED /* ManageCoreDataService.swift */,
+				FA780F1428B7A00300663CED /* ManageCoreData.swift */,
 				FACA647428B1430800D6F9C2 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
@@ -544,7 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA780F1528B7A00300663CED /* ManageCoreDataService.swift in Sources */,
+				FA780F1528B7A00300663CED /* ManageCoreData.swift in Sources */,
 				FA09532F2889DC1700EEC3EA /* FavoritesRecipesViewController.swift in Sources */,
 				FA0953232886F71600EEC3EA /* SearchRecipesViewController.swift in Sources */,
 				FA095332288D4AA700EEC3EA /* ListRecipesViewController.swift in Sources */,
@@ -571,6 +577,8 @@
 			files = (
 				FA7637F428A1A46400EA4FC1 /* RecipeServiceTestCase.swift in Sources */,
 				FA7C197628A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift in Sources */,
+				FA83138228B8A6820084BF66 /* ManageCoreDataTests.swift in Sources */,
+				FA83138028B8A2F80084BF66 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
