@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import PaginatedTableView
 
 class ListRecipesViewController: UIViewController {
     
@@ -17,7 +16,6 @@ class ListRecipesViewController: UIViewController {
     let service = RecipeService(httpClient: AlamofireClientRecipesSearch())
     
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet weak var paginatedTableView: PaginatedTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,6 @@ class ListRecipesViewController: UIViewController {
         tableView.delegate = self
         
         fetchData()
-        
     }
     
     func fetchData() {
@@ -43,14 +40,6 @@ class ListRecipesViewController: UIViewController {
             }
         }
     }
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if segue.identifier == "ShowDetailRecipe" {
-    //            if let destinationVc = segue.destination as? DetailRecipeViewController {
-    //                destinationVc.recipes = self.recipes
-    //            }
-    //        }
-    //    }
 }
 
 extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -113,6 +102,5 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
         
         return footerView
     }
-    
 }
 

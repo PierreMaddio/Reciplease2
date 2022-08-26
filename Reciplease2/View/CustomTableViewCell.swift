@@ -25,15 +25,6 @@ class CustomTableViewCell: UITableViewCell {
         infoRecipeView.layer.borderColor = UIColor.white.cgColor
 
     }
-    
-//    private func addShadow() {
-//
-//        infoRecipeView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7).cgColor
-//        infoRecipeView.layer.shadowRadius = 2.0
-//        infoRecipeView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-//        infoRecipeView.layer.shadowOpacity = 2.0
-//     
-//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -52,6 +43,5 @@ class CustomTableViewCell: UITableViewCell {
         yieldLabel.text = "\(recipe.yield) p"
         timeLabel.text = "\(recipe.totalTime ?? 0) m"
     }
-    
 }
 

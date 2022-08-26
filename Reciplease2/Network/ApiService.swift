@@ -30,5 +30,4 @@ class ApiService {
         urlCom.queryItems = newQueryItems
         return urlCom.url!
     }
-    
 }

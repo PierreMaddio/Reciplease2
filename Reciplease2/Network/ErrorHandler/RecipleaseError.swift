@@ -8,7 +8,7 @@
 import Foundation
 
 enum RecipleaseError: Error {
-case errorNetwork, errorIngredientneeded, errorNoResult, errorParsingJson
+case errorNetwork, errorIngredientneeded, errorParsingJson
     
     var title: String {
         switch self {
@@ -17,8 +17,6 @@ case errorNetwork, errorIngredientneeded, errorNoResult, errorParsingJson
             // Search recipe Error messages
         case .errorIngredientneeded:
             return "Alert Ingredient"
-        case .errorNoResult:
-            return "Alert Result"
         }
     }
     
@@ -30,8 +28,6 @@ case errorNetwork, errorIngredientneeded, errorNoResult, errorParsingJson
             return "No parsing Json"
         case .errorIngredientneeded:
             return "Need some ingredients"
-        case .errorNoResult:
-            return "No result, either the combination of ingredients gives nothing, or an ingredient is poorly written"
         }
     }
 }

@@ -79,16 +79,6 @@ extension FavoritesRecipesViewController: UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         }
     }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "FavRecipe")
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: "FavRecipe")
-//        }
-//        let favRecipe = self.favoriteRecipes[indexPath.row]
-//        cell?.textLabel?.text = favRecipe.label
-//        return cell!
-//    }
 }
 
 extension FavoritesRecipesViewController: UITableViewDelegate {

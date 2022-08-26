@@ -50,7 +50,7 @@ class SearchRecipesViewController: UIViewController {
         ingredients.removeAll()
         tableView.reloadData()
     }
-        
+    
     // preparation of the parameters to be sent before launching segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowListRecipes" {

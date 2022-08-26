@@ -41,7 +41,7 @@ class RecipeServiceTestCase: XCTestCase {
                 ])
                 
                 let image = obj.hits[0].recipe.image
-                    XCTAssertEqual(image, "https://edamam-product-images.s3")
+                XCTAssertEqual(image, "https://edamam-product-images.s3")
                 
                 let yield = obj.hits[0].recipe.yield
                 XCTAssertEqual(yield, 4)
@@ -59,7 +59,6 @@ class RecipeServiceTestCase: XCTestCase {
         }
         waitForExpectations(timeout: 1)
     }
-
 }
 
 

@@ -14,7 +14,7 @@ class AlamofireClientRecipesSearchFake: HTTPClient {
         let bundle = Bundle(for: RecipeServiceTestCase.self)
         let url = bundle.url(forResource: "Edamam", withExtension: "json")!
         let json = try! Data(contentsOf: url)
-
+        
         let dataResponse = AFDataResponse<Data?>.init(request: nil, response: nil, data: json, metrics: nil, serializationDuration: .zero, result: .success(json))
         
         self.decodeRecipesSearch(from: dataResponse, completion: completion)
