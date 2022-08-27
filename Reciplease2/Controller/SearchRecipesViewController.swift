@@ -28,6 +28,9 @@ class SearchRecipesViewController: UIViewController {
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
+        if ingredients.count == 0 {
+            alertIngredient()
+        }
         performSegue(withIdentifier: "ShowListRecipes", sender: nil)
     }
     
@@ -49,6 +52,18 @@ class SearchRecipesViewController: UIViewController {
     @IBAction func clearIngredientAction(_ sender: Any) {
         ingredients.removeAll()
         tableView.reloadData()
+    }
+    
+    func alertIngredient() {
+        if ingredientTextField.state.isEmpty {
+            let title = RecipleaseError.errorIngredientneeded.title
+            let message = RecipleaseError.errorIngredientneeded.message
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true) {
+                return
+            }
+        }
     }
     
     // preparation of the parameters to be sent before launching segue

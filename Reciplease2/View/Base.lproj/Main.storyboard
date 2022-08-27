@@ -726,7 +726,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="SCq-NZ-Aab">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="gbx-eu-kJR">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star.fill" catalog="system" id="gbx-eu-kJR">
                             <connections>
                                 <action selector="markAsFavorite:" destination="vJy-4m-sEb" id="slx-23-EgG"/>
                             </connections>
@@ -757,6 +757,7 @@
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="restaurant" width="550" height="367"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

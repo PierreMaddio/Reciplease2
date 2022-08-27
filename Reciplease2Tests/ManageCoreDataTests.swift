@@ -26,8 +26,8 @@ class ManageCoreDataTests: XCTestCase {
         sut.markAsFavorite(recipe: recipe) { isFavorite in
             //if isFavorite {
             print("Calling")
-                let savedToFavorite = sut.checkIfFavorite(recipeName: label)
-                XCTAssertTrue(savedToFavorite)
+            let savedToFavorite = sut.checkIfFavorite(recipeName: label)
+            XCTAssertTrue(savedToFavorite)
             //}
             
             sut.deleteFromFavorite(recipeName: label) {success in
