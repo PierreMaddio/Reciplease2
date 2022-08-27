@@ -18,6 +18,7 @@ class ManageCoreDataTests: XCTestCase {
         
         persistentContainer = .inMemoryContainer()
     }
+    
     func testAddFavorite() {
         let sut = ManageCoreData(container: persistentContainer)
         let label = UUID().uuidString
