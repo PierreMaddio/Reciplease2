@@ -10,10 +10,10 @@ import CoreData
 
 class ManageCoreData {
     static let shared = ManageCoreData()
+    let persistentContainer: NSPersistentContainer
     
-    let persistentContainer = NSPersistentContainer(name: "Reciplease2")
-    
-    private init() {
+    init(container: NSPersistentContainer = NSPersistentContainer(name: "Reciplease2")) {
+        self.persistentContainer = container
         persistentContainer.loadPersistentStores { description, error in
             if error != nil {
                 print("Failed to init core data")
