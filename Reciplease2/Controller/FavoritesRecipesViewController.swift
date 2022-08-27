@@ -23,11 +23,24 @@ class FavoritesRecipesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.fetchFavorites()
+        alertInfoAddFavorite()
+    }
+    
+    func alertInfoAddFavorite() {
+        if favoriteRecipes.count == 0 {
+            let title = RecipleaseError.errorInfoAddFavorite.title
+            let message = RecipleaseError.errorInfoAddFavorite.message
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true) {
+                return
+            }
+        }
     }
     
     func fetchFavorites() {
         ManageCoreData.shared.fetchFavorites { [weak self] recipes in
-            print("Fetching... ", recipes)
+            // print("Fetching... ", recipes)
             self?.favoriteRecipes = recipes
             self?.tableFavoriteRecipes.reloadData()
         }

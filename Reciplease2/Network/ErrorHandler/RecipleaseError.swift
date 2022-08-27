@@ -8,15 +8,16 @@
 import Foundation
 
 enum RecipleaseError: Error {
-case errorNetwork, errorIngredientneeded, errorParsingJson
+case errorNetwork, errorIngredientneeded, errorParsingJson, errorInfoAddFavorite
     
     var title: String {
         switch self {
         case .errorNetwork, .errorParsingJson:
             return "Alert Network"
-            // Search recipe Error messages
         case .errorIngredientneeded:
             return "Alert Ingredient"
+        case .errorInfoAddFavorite:
+            return "Alert Favorite"
         }
     }
     
@@ -28,6 +29,8 @@ case errorNetwork, errorIngredientneeded, errorParsingJson
             return "No parsing Json"
         case .errorIngredientneeded:
             return "Need some ingredients"
+        case .errorInfoAddFavorite:
+            return "To add recipes to favorites click on the white star on the recipe page"
         }
     }
 }
