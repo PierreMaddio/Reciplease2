@@ -21,6 +21,12 @@ class ManageCoreDataTests: XCTestCase {
     manageCoreData = ManageCoreData(container: coreDataStack.storeContainer)
     }
     
+//    override func tearDown() {
+//      super.tearDown()
+//      manageCoreData = nil
+//      coreDataStack = nil
+//    }
+    
     func testAddFavorite() {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
@@ -40,20 +46,33 @@ class ManageCoreDataTests: XCTestCase {
         }
     }
     
+    func testAdd2Favorites() {
+        guard let sut = manageCoreData else { return }
+        let label1 = UUID().uuidString
+        let label2 = UUID().uuidString
+        let recipe1 = makeRecipe(label: label1)
+        let recipe2 = makeRecipe(label: label2)
+            
+            sut.markAsFavorite(recipe: recipe1) { isFavorite in
+                let savedToFavorite1 = sut.checkIfFavorite(recipeName: label1)
+                XCTAssertTrue(savedToFavorite1)
+            }
+            
+            sut.markAsFavorite(recipe: recipe2) { isFavorite in
+                let savedToFavorite2 = sut.checkIfFavorite(recipeName: label2)
+                XCTAssertTrue(savedToFavorite2)
+            }
+            
+        sut.fetchFavorites { recipes in
+            XCTAssertNotNil(recipes)
+            XCTAssertTrue(recipes.count == 2)
+            XCTAssertTrue(recipe1.label == label1)
+        }
+            
+    }
+    
     func makeRecipe(label: String) -> Recipe {
         return Recipe(label: label, image: UUID().uuidString, url: UUID().uuidString, yield: Int.random(in: 0...50), ingredientLines: [UUID().uuidString], totalTime: 0)
-    }
-}
-
-extension NSPersistentContainer {
-    static func inMemoryContainer() -> NSPersistentContainer {
-        let desc = NSPersistentStoreDescription()
-        desc.type = NSInMemoryStoreType
-        
-        let container = NSPersistentContainer(name: CoreDataStack.modelName,
-                                              managedObjectModel: CoreDataStack.model)
-        container.persistentStoreDescriptions = [desc]
-        return container
     }
 }
 
