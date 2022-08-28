@@ -69,32 +69,19 @@ class ManageCoreData {
     
     func markAsFavorite(recipe: Recipe, completion: @escaping (Bool) -> Void) {
         let managedObjectContext = persistentContainer.viewContext
+        let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!
         
-        if recipe.isFavorite ?? false {
-            completion(false)
-            self.deleteFromFavorite(recipeName: recipe.label) { completed in
-                completion(false)
-            }
-        } else {
-            guard  let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext) else {
-                print("Unable to get entity")
-                return }
-            
-            let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
-            favoriteEntity.setValue(recipe.image, forKey: "image")
-            favoriteEntity.setValue(recipe.label, forKey: "label")
-            favoriteEntity.setValue("\(recipe.totalTime ?? 0)", forKey: "totalTime")
-            favoriteEntity.setValue("\((recipe.ingredientLines).joined(separator: "$j%^"))", forKey: "ingredientLines")
-            favoriteEntity.setValue(recipe.url, forKey: "url")
-            favoriteEntity.setValue("\(recipe.yield)", forKey: "yield")
-            
-            do {
-                try managedObjectContext.save()
-            } catch let error {
-                print("Error saving entry == \(error.localizedDescription)")
-            }
-            completion(true)
-        }
+        let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
+        favoriteEntity.setValue(recipe.image, forKey: "image")
+        favoriteEntity.setValue(recipe.label, forKey: "label")
+        favoriteEntity.setValue("\(recipe.totalTime ?? 0)", forKey: "totalTime")
+        favoriteEntity.setValue("\((recipe.ingredientLines).joined(separator: "$j%^"))", forKey: "ingredientLines")
+        favoriteEntity.setValue(recipe.url, forKey: "url")
+        favoriteEntity.setValue("\(recipe.yield)", forKey: "yield")
+        
+        try? managedObjectContext.save()
+        
+        completion(true)
     }
     
     func deleteFromFavorite(recipeName: String, completion: @escaping (Bool) -> Void) {

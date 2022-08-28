@@ -27,7 +27,7 @@ class ManageCoreDataTests: XCTestCase {
 //          coreDataStack = nil
 //        }
     
-    func testAddFavorite() {
+    func testAddAndDeleteFavorite() {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
         let recipe = makeRecipe(label: label)
@@ -46,7 +46,24 @@ class ManageCoreDataTests: XCTestCase {
         }
     }
     
-    func testAdd3FavoritesAndFetchThem() {
+    func testFavoriteWithNoTotalTime() {
+        guard let sut = manageCoreData else { return }
+        let label = UUID().uuidString
+        let recipe = makeRecipe(label: label, totalTime: nil)
+        sut.markAsFavorite(recipe: recipe) { _ in
+            //if isFavorite {
+            print("Calling")
+            let isFavorite = sut.checkIfFavorite(recipeName: label)
+            XCTAssertTrue(isFavorite)
+            //}
+            sut.fetchFavorites { recipes in
+                XCTAssertTrue(recipes.count == 1)
+                XCTAssertTrue(recipes[0].totalTime == 0)
+            }
+        }
+    }
+    
+    func testAdd2FavoritesAndFetchThem() {
         guard let sut = manageCoreData else { return }
         let label1 = UUID().uuidString
         let label2 = UUID().uuidString
@@ -71,8 +88,8 @@ class ManageCoreDataTests: XCTestCase {
         }
     }
     
-    func makeRecipe(label: String) -> Recipe {
-        return Recipe(label: label, image: UUID().uuidString, url: UUID().uuidString, yield: Int.random(in: 0...50), ingredientLines: [UUID().uuidString], totalTime: 0)
+    func makeRecipe(label: String, totalTime: Int? = 20) -> Recipe {
+        return Recipe(label: label, image: UUID().uuidString, url: UUID().uuidString, yield: Int.random(in: 0...50), ingredientLines: [UUID().uuidString], totalTime: totalTime)
     }
 }
 

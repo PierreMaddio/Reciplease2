@@ -47,15 +47,18 @@ class DetailRecipeViewController: UIViewController {
     }
     
     @IBAction func markAsFavorite(_ sender: Any) {
-        guard let recipe = recipe else {
-            return
-        }
-
-        ManageCoreData.shared.markAsFavorite(recipe: recipe) {[weak self] isFavorite in
-            if isFavorite {
-                self?.favoriteButton.tintColor = UIColor.green
-            } else {
+        guard let recipe = recipe else { return }
+        if recipe.isFavorite ?? false {
+            ManageCoreData.shared.deleteFromFavorite(recipeName: recipe.label) { [weak self] deleted in
                 self?.favoriteButton.tintColor = .white
+            }
+        } else {
+            ManageCoreData.shared.markAsFavorite(recipe: recipe) {[weak self] isFavorite in
+                if isFavorite {
+                    self?.favoriteButton.tintColor = UIColor.green
+                } else {
+                    self?.favoriteButton.tintColor = .white
+                }
             }
         }
     }
