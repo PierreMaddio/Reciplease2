@@ -8,7 +8,6 @@
 import Foundation
 
 class ApiService {
-    
     static let appKey = "c4ed16eb0795215c47de2959c93d00c4"
     static let appID = "7d167a47"
     
