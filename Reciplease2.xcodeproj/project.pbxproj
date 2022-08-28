@@ -196,8 +196,7 @@
 				FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */,
 				FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */,
 				FA2EBF6F28AA717A00BDDF5C /* Edamam.json */,
-				FA83137F28B8A2F80084BF66 /* TestCoreDataStack.swift */,
-				FA83138128B8A6820084BF66 /* ManageCoreDataTests.swift */,
+				FAA1B1B328BBCEC70042F19A /* CoreDataTests */,
 			);
 			path = Reciplease2Tests;
 			sourceTree = "<group>";
@@ -278,6 +277,15 @@
 				FA81F1F828A431BE00CD5804 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FAA1B1B328BBCEC70042F19A /* CoreDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA83137F28B8A2F80084BF66 /* TestCoreDataStack.swift */,
+				FA83138128B8A6820084BF66 /* ManageCoreDataTests.swift */,
+			);
+			path = CoreDataTests;
 			sourceTree = "<group>";
 		};
 		FAF29D2028945C45005B4A36 /* Network */ = {
