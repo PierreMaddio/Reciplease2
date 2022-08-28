@@ -8,7 +8,7 @@
 import Foundation
 
 enum RecipleaseError: Error {
-case errorNetwork, errorIngredientneeded, errorParsingJson, errorInfoAddFavorite
+    case errorNetwork, errorIngredientneeded, errorParsingJson, errorInfoAddFavorite
     
     var title: String {
         switch self {
