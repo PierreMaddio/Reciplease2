@@ -12,16 +12,16 @@ class TestCoreDataStack: CoreDataStack {
     override init() {
         super.init()
         
-        // 1 Creates an in-memory persistent store
+        // Creates an in-memory persistent store
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
         
-        // 2 Creates an NSPersistentContainer instance, passing in the modelName and NSManageObjectModel stored in the CoreDataStack
+        // Creates an NSPersistentContainer instance, passing in the modelName and NSManageObjectModel stored in the CoreDataStack
         let container = NSPersistentContainer(
             name: CoreDataStack.modelName,
             managedObjectModel: CoreDataStack.model)
         
-        // 3 Assigns the in-memory persistent store to the container
+        // Assigns the in-memory persistent store to the container
         container.persistentStoreDescriptions = [persistentStoreDescription]
         
         container.loadPersistentStores { _, error in
@@ -30,7 +30,7 @@ class TestCoreDataStack: CoreDataStack {
             }
         }
         
-        // 4 Overrides the storeContainer in CoreDataStack
+        // Overrides the storeContainer in CoreDataStack
         storeContainer = container
     }
 }
