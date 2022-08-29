@@ -27,7 +27,7 @@ class ManageCoreData {
         
         do {
             let result = try managedObjectContext.fetch(fetchRequest)
-            print("Result count =\(result.count)")
+            // print("Result count =\(result.count)")
             var favoriteRecipes: [Recipe] = []
             for favorite in result as! [NSManagedObject] {
                 guard let label = favorite.value(forKey: "label") as? String else { return }
@@ -66,8 +66,7 @@ class ManageCoreData {
         return false
     }
     
-    // une func qui ajoute et une func qui checkIsFavorite
-    func markAsFavorite(recipe: Recipe, completion: @escaping (Bool) -> Void) {
+    func addAsFavorite(recipe: Recipe, completion: @escaping (Bool) -> Void) {
         let managedObjectContext = persistentContainer.viewContext
         let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!
         

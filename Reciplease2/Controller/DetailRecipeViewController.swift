@@ -62,7 +62,7 @@ class DetailRecipeViewController: UIViewController {
                 self?.favoriteButton.tintColor = .white
             }
         } else {
-            ManageCoreData.shared.markAsFavorite(recipe: recipe) { [weak self] isFavorite in
+            ManageCoreData.shared.addAsFavorite(recipe: recipe) { [weak self] isFavorite in
                 self?.favoriteButton.tintColor = .green
             }
         }
@@ -76,7 +76,6 @@ class DetailRecipeViewController: UIViewController {
     func deleteFromFavorite() {
         guard let recipeName = self.recipe?.label else {return }
         ManageCoreData.shared.deleteFromFavorite(recipeName: recipeName) { success in
-            print("Deleted:: ", success)
         }
     }
     
