@@ -67,6 +67,7 @@ class ManageCoreData {
         return false
     }
     
+    // une func qui ajoute et une func qui checkIsFavorite
     func markAsFavorite(recipe: Recipe, completion: @escaping (Bool) -> Void) {
         let managedObjectContext = persistentContainer.viewContext
         let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!

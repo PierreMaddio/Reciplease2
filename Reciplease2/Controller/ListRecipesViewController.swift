@@ -35,8 +35,8 @@ class ListRecipesViewController: UIViewController {
                 self.href = obj.links.next.href
                 self.recipes = obj.hits.map { $0.recipe }
                 self.tableView.reloadData()
-            case .failure(_):
-                break
+            case .failure(let err):
+                print(err.localizedDescription)
             }
         }
     }
@@ -80,8 +80,8 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
                     self.href = obj.links.next.href
                     self.recipes += obj.hits.map { $0.recipe }
                     self.tableView.reloadData()
-                case .failure(_):
-                    break
+                case .failure(let err):
+                    print(err.localizedDescription)
                 }
             }
         }
