@@ -59,7 +59,6 @@ struct Recipe: Decodable {
     let yield: Int
     let ingredientLines: [String]
     let totalTime: Int?
-    var isFavorite: Bool?
 }
 
 // MARK: - RecipesSearchLinks

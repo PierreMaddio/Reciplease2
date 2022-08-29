@@ -29,7 +29,6 @@ class ManageCoreData {
             let result = try managedObjectContext.fetch(fetchRequest)
             print("Result count =\(result.count)")
             var favoriteRecipes: [Recipe] = []
-            //self.favoriteRecipes.removeAll()
             for favorite in result as! [NSManagedObject] {
                 guard let label = favorite.value(forKey: "label") as? String else { return }
                 guard let image = favorite.value(forKey: "image") as? String else { return }

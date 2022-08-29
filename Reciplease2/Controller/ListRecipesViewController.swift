@@ -67,7 +67,6 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
     
     // pagination
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
         if indexPath.row == recipes.count - 1 {
             
             self.tableView.tableFooterView = createSpinnerFooter()

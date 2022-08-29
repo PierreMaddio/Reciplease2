@@ -41,30 +41,29 @@ class DetailRecipeViewController: UIViewController {
         infoRecipeView.layer.cornerRadius = 10
         infoRecipeView.layer.borderWidth = 1
         infoRecipeView.layer.borderColor = UIColor.white.cgColor
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let isRecipeFavorite = self.checkIfFavorite()
-        self.recipe?.isFavorite = isRecipeFavorite
+        self.favoriteButton.tintColor = .white
         if isRecipeFavorite {
             self.favoriteButton.tintColor = .green
         }
     }
     
     @IBAction func markAsFavorite(_ sender: Any) {
-        // if recipe est deja en favori (check) je la supprime, sinon je l'ajoute en changeant l'apparence de l'étoile
-        // une func, une action !!!!!
+        // If a recipe is already in favorite (with func checkIfFavorite), I delete it, otherwise I add it by changing the appearance of the star.
+        
         guard let recipe = recipe else { return }
-        if recipe.isFavorite ?? false {
+        let isFavorite = ManageCoreData.shared.checkIfFavorite(recipeName: recipe.label)
+        if isFavorite {
             ManageCoreData.shared.deleteFromFavorite(recipeName: recipe.label) { [weak self] deleted in
                 self?.favoriteButton.tintColor = .white
             }
         } else {
             ManageCoreData.shared.markAsFavorite(recipe: recipe) { [weak self] isFavorite in
-                
-                if isFavorite {
-                    self?.favoriteButton.tintColor = UIColor.green
-                } else {
-                    self?.favoriteButton.tintColor = .white
-                }
+                self?.favoriteButton.tintColor = .green
             }
         }
     }
