@@ -24,6 +24,9 @@ class DetailRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleRecipeLabel.isAccessibilityElement = true
+        titleRecipeLabel.accessibilityHint = "The title of the recipe"
+        
         tableView.delegate = self
         tableView.dataSource = self
         if let imageUrl = recipe?.image {
