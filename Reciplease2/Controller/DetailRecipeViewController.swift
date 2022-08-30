@@ -65,7 +65,7 @@ class DetailRecipeViewController: UIViewController {
                 self?.favoriteButton.tintColor = .white
             }
         } else {
-            ManageCoreData.shared.addAsFavorite(recipe: recipe) { [weak self] isFavorite in
+            ManageCoreData.shared.addFavorite(recipe: recipe) { [weak self] isFavorite in
                 self?.favoriteButton.tintColor = .green
             }
         }

@@ -66,10 +66,10 @@ class ManageCoreData {
         return false
     }
     
-    func addAsFavorite(recipe: Recipe, completion: @escaping (Bool) -> Void) {
+    func addFavorite(recipe: Recipe, completion: @escaping (RecipleaseCoreData) -> Void) {
         let managedObjectContext = persistentContainer.viewContext
         let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!
-        
+
         let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
         favoriteEntity.setValue(recipe.image, forKey: "image")
         favoriteEntity.setValue(recipe.label, forKey: "label")
@@ -77,10 +77,10 @@ class ManageCoreData {
         favoriteEntity.setValue("\((recipe.ingredientLines).joined(separator: "$j%^"))", forKey: "ingredientLines")
         favoriteEntity.setValue(recipe.url, forKey: "url")
         favoriteEntity.setValue("\(recipe.yield)", forKey: "yield")
-        
+
         try? managedObjectContext.save()
-        
-        completion(true)
+
+        completion(favoriteEntity as! RecipleaseCoreData)
     }
     
     func deleteFromFavorite(recipeName: String, completion: @escaping (Bool) -> Void) {
