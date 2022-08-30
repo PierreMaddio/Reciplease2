@@ -21,7 +21,7 @@ class SearchRecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -36,10 +36,15 @@ class SearchRecipesViewController: UIViewController {
     }
     
     @IBAction func addIngredientAction(_ sender: Any) {
+        guard let textFieldContainsWhiteSpaces = ingredientTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty else { return }
+        
         if let ingredientText = ingredientTextField.text, !ingredientText.isEmpty {
             let tab = ingredientText.split(separator: ",")
             if tab.isEmpty {
                 ingredients.append(ingredientText)
+            }
+            else if textFieldContainsWhiteSpaces {
+                self.alertIngredient()
             } else {
                 for item in tab {
                     ingredients.append(item.description.trimmingCharacters(in: .whitespaces))
@@ -102,3 +107,4 @@ extension SearchRecipesViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
 }
+

@@ -36,7 +36,9 @@ class ListRecipesViewController: UIViewController {
                 self.recipes = obj.hits.map { $0.recipe }
                 self.tableView.reloadData()
             case .failure(_):
-                self.alertNetwork()
+                if !self.ingredients.isEmpty {
+                    self.alertNoResult()
+                }
             }
         }
     }
@@ -44,6 +46,16 @@ class ListRecipesViewController: UIViewController {
     func alertNetwork() {
         let title = RecipleaseError.errorNetwork.title
         let message = RecipleaseError.errorNetwork.message
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true) {
+                return
+            }
+    }
+    
+    func alertNoResult() {
+        let title = RecipleaseError.errorNoResult.title
+        let message = RecipleaseError.errorNoResult.message
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true) {
