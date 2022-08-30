@@ -21,10 +21,11 @@ class SearchRecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tableView.dataSource = self
         tableView.delegate = self
         
+        buttonsAccessibility()
     }
     
     @IBAction func searchButtonAction(_ sender: Any) {
@@ -64,6 +65,17 @@ class SearchRecipesViewController: UIViewController {
                 return
             }
         }
+    }
+    
+    func buttonsAccessibility() {
+        addButton.isAccessibilityElement = true
+        addButton.accessibilityHint = "Adding ingredients to the list"
+        
+        clearButton.isAccessibilityElement = true
+        clearButton.accessibilityHint = "Clears the list of ingredients"
+        
+        searchButton.isAccessibilityElement = true
+        searchButton.accessibilityHint = "Search for recipes that match the ingredients entered"
     }
     
     // preparation of the parameters to be sent before launching segue

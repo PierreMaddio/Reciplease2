@@ -41,6 +41,9 @@ class DetailRecipeViewController: UIViewController {
         infoRecipeView.layer.cornerRadius = 10
         infoRecipeView.layer.borderWidth = 1
         infoRecipeView.layer.borderColor = UIColor.white.cgColor
+        
+        getDirectionButton.isAccessibilityElement = true
+        getDirectionButton.accessibilityHint = "Redirection to the web page indicating how to cook this recipe"
     }
     
     override func viewWillAppear(_ animated: Bool) {
