@@ -25,7 +25,7 @@ class ManageCoreDataTests: XCTestCase {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
         let recipe = makeRecipe(label: label)
-        sut.addAsFavorite(recipe: recipe) { isFavorite in
+        sut.addFavorite(recipe: recipe) { favorite in
             //if isFavorite {
             print("Calling")
             let savedToFavorite = sut.checkIfFavorite(recipeName: label)
@@ -44,12 +44,10 @@ class ManageCoreDataTests: XCTestCase {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
         let recipe = makeRecipe(label: label, totalTime: nil)
-        sut.addAsFavorite(recipe: recipe) { _ in
-            //if isFavorite {
+        sut.addFavorite(recipe: recipe) { _ in
             print("Calling")
             let isFavorite = sut.checkIfFavorite(recipeName: label)
             XCTAssertTrue(isFavorite)
-            //}
             sut.fetchFavorites { recipes in
                 XCTAssertTrue(recipes.count == 1)
                 XCTAssertTrue(recipes[0].totalTime == 0)
@@ -64,12 +62,12 @@ class ManageCoreDataTests: XCTestCase {
         let recipe1 = makeRecipe(label: label1)
         let recipe2 = makeRecipe(label: label2)
         
-        sut.addAsFavorite(recipe: recipe1) { isFavorite in
+        sut.addFavorite(recipe: recipe1) { favorite in
             let savedToFavorite1 = sut.checkIfFavorite(recipeName: label1)
             XCTAssertTrue(savedToFavorite1)
         }
         
-        sut.addAsFavorite(recipe: recipe2) { isFavorite in
+        sut.addFavorite(recipe: recipe2) { favorite in
             let savedToFavorite2 = sut.checkIfFavorite(recipeName: label2)
             XCTAssertTrue(savedToFavorite2)
         }
