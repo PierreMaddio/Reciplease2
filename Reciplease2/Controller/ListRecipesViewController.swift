@@ -35,10 +35,20 @@ class ListRecipesViewController: UIViewController {
                 self.href = obj.links.next.href
                 self.recipes = obj.hits.map { $0.recipe }
                 self.tableView.reloadData()
-            case .failure(let err):
-                print(err.localizedDescription)
+            case .failure(_):
+                self.alertNetwork()
             }
         }
+    }
+    
+    func alertNetwork() {
+        let title = RecipleaseError.errorNetwork.title
+        let message = RecipleaseError.errorNetwork.message
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true) {
+                return
+            }
     }
 }
 
@@ -79,8 +89,8 @@ extension ListRecipesViewController: UITableViewDataSource, UITableViewDelegate 
                     self.href = obj.links.next.href
                     self.recipes += obj.hits.map { $0.recipe }
                     self.tableView.reloadData()
-                case .failure(let err):
-                    print(err.localizedDescription)
+                case .failure(_):
+                    self.alertNetwork()
                 }
             }
         }
