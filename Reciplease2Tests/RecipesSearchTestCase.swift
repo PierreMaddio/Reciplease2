@@ -9,7 +9,7 @@ import XCTest
 @testable import Reciplease2
 import Alamofire
 
-class RecipeServiceTestCase: XCTestCase {
+class RecipesSearchTestCase: XCTestCase {
     
     var ingredients: [String]!
     var recipes: [Recipe]!

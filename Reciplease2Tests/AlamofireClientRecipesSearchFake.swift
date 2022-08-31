@@ -11,7 +11,7 @@ import Alamofire
 class AlamofireClientRecipesSearchFake: HTTPClient {
     func request(url: URL, completion: @escaping (Result<RecipesSearch, Error>) -> Void) {
         
-        let bundle = Bundle(for: RecipeServiceTestCase.self)
+        let bundle = Bundle(for: RecipesSearchTestCase.self)
         let url = bundle.url(forResource: "Edamam", withExtension: "json")!
         let json = try! Data(contentsOf: url)
         

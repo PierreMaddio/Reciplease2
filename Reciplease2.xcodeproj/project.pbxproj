@@ -24,7 +24,7 @@
 		FA095334288D650F00EEC3EA /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */; };
 		FA20F89F28AD46CA00283E41 /* RecipleaseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20F89E28AD46CA00283E41 /* RecipleaseError.swift */; };
 		FA2EBF7028AA717A00BDDF5C /* Edamam.json in Resources */ = {isa = PBXBuildFile; fileRef = FA2EBF6F28AA717A00BDDF5C /* Edamam.json */; };
-		FA7637F428A1A46400EA4FC1 /* RecipeServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */; };
+		FA7637F428A1A46400EA4FC1 /* RecipesSearchTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7637F328A1A46400EA4FC1 /* RecipesSearchTestCase.swift */; };
 		FA780F1328B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA780F1228B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift */; };
 		FA780F1528B7A00300663CED /* ManageCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA780F1428B7A00300663CED /* ManageCoreData.swift */; };
 		FA7C197628A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */; };
@@ -86,7 +86,7 @@
 		FA095333288D650F00EEC3EA /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		FA20F89E28AD46CA00283E41 /* RecipleaseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseError.swift; sourceTree = "<group>"; };
 		FA2EBF6F28AA717A00BDDF5C /* Edamam.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Edamam.json; sourceTree = "<group>"; };
-		FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTestCase.swift; sourceTree = "<group>"; };
+		FA7637F328A1A46400EA4FC1 /* RecipesSearchTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchTestCase.swift; sourceTree = "<group>"; };
 		FA780F1228B79DC100663CED /* RecipleaseCoreData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipleaseCoreData+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FA780F1428B7A00300663CED /* ManageCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCoreData.swift; sourceTree = "<group>"; };
 		FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireClientRecipesSearchFake.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		FA0952DE2881F6AF00EEC3EA /* Reciplease2Tests */ = {
 			isa = PBXGroup;
 			children = (
-				FA7637F328A1A46400EA4FC1 /* RecipeServiceTestCase.swift */,
+				FA7637F328A1A46400EA4FC1 /* RecipesSearchTestCase.swift */,
 				FA7C197528A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift */,
 				FA2EBF6F28AA717A00BDDF5C /* Edamam.json */,
 				FAA1B1B328BBCEC70042F19A /* CoreDataTests */,
@@ -583,7 +583,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA7637F428A1A46400EA4FC1 /* RecipeServiceTestCase.swift in Sources */,
+				FA7637F428A1A46400EA4FC1 /* RecipesSearchTestCase.swift in Sources */,
 				FA7C197628A4F51900E6F1A3 /* AlamofireClientRecipesSearchFake.swift in Sources */,
 				FA83138228B8A6820084BF66 /* ManageCoreDataTests.swift in Sources */,
 				FA83138028B8A2F80084BF66 /* TestCoreDataStack.swift in Sources */,
