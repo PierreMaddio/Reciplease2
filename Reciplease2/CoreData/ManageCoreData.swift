@@ -27,7 +27,6 @@ class ManageCoreData {
         
         do {
             let result = try managedObjectContext.fetch(fetchRequest)
-            // print("Result count =\(result.count)")
             var favoriteRecipes: [Recipe] = []
             for favorite in result as! [NSManagedObject] {
                 guard let label = favorite.value(forKey: "label") as? String else { return }
@@ -57,19 +56,15 @@ class ManageCoreData {
         let managedObjectContext = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipleaseCoreData")
         fetchRequest.predicate = NSPredicate(format: "label = %@", recipeName )
-        do {
-            let result = try managedObjectContext.fetch(fetchRequest)
-            return result.count == 1 ? true: false
-        } catch let error {
-            print("Error getting favorites == \(error.localizedDescription)")
-        }
-        return false
+        
+        let result = try? managedObjectContext.fetch(fetchRequest)
+        return result?.count == 1 ? true: false
     }
     
-    func addFavorite(recipe: Recipe, completion: @escaping (RecipleaseCoreData) -> Void) {
+    func addFavorite(recipe: Recipe) {
         let managedObjectContext = persistentContainer.viewContext
         let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!
-
+        
         let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
         favoriteEntity.setValue(recipe.image, forKey: "image")
         favoriteEntity.setValue(recipe.label, forKey: "label")
@@ -77,31 +72,19 @@ class ManageCoreData {
         favoriteEntity.setValue("\((recipe.ingredientLines).joined(separator: "$j%^"))", forKey: "ingredientLines")
         favoriteEntity.setValue(recipe.url, forKey: "url")
         favoriteEntity.setValue("\(recipe.yield)", forKey: "yield")
-
+        
         try? managedObjectContext.save()
-
-        completion(favoriteEntity as! RecipleaseCoreData)
     }
     
-    func deleteFromFavorite(recipeName: String, completion: @escaping (Bool) -> Void) {
+    func deleteFromFavorite(recipeName: String) {
         let managedObjectContext = persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "RecipleaseCoreData")
         fetchRequest.predicate = NSPredicate(format: "label = %@", recipeName)
-        do {
-            let result = try managedObjectContext.fetch(fetchRequest)
-            for favorite in result as! [NSManagedObject] {
-                managedObjectContext.delete(favorite)
-            }
-            do {
-                try managedObjectContext.save()
-                completion(true)
-            } catch let error {
-                completion(false)
-                print("Error deleting entry == \(error.localizedDescription)")
-            }
-        } catch let error {
-            completion(false)
-            print("Error getting favorites == \(error.localizedDescription)")
+        let result = try? managedObjectContext.fetch(fetchRequest)
+        for favorite in result as! [NSManagedObject] {
+            managedObjectContext.delete(favorite)
+            
+            try? managedObjectContext.save()
         }
     }
 }

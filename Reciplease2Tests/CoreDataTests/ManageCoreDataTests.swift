@@ -25,26 +25,23 @@ class ManageCoreDataTests: XCTestCase {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
         let recipe = makeRecipe(label: label)
-        sut.addFavorite(recipe: recipe) { favorite in
-            //if isFavorite {
+        sut.addFavorite(recipe: recipe)
             print("Calling")
-            let savedToFavorite = sut.checkIfFavorite(recipeName: label)
+        var savedToFavorite = sut.checkIfFavorite(recipeName: label)
             XCTAssertTrue(savedToFavorite)
             //}
 
-            sut.deleteFromFavorite(recipeName: label) {success in
+            sut.deleteFromFavorite(recipeName: label)
                 print("Calling... 22")
-                let savedToFavorite = sut.checkIfFavorite(recipeName: label)
+                savedToFavorite = sut.checkIfFavorite(recipeName: label)
                 XCTAssertFalse(savedToFavorite)
-            }
-        }
     }
     
     func testFavoriteWithNoTotalTime() {
         guard let sut = manageCoreData else { return }
         let label = UUID().uuidString
         let recipe = makeRecipe(label: label, totalTime: nil)
-        sut.addFavorite(recipe: recipe) { _ in
+        sut.addFavorite(recipe: recipe)
             print("Calling")
             let isFavorite = sut.checkIfFavorite(recipeName: label)
             XCTAssertTrue(isFavorite)
@@ -52,7 +49,6 @@ class ManageCoreDataTests: XCTestCase {
                 XCTAssertTrue(recipes.count == 1)
                 XCTAssertTrue(recipes[0].totalTime == 0)
             }
-        }
     }
     
     func testAdd2FavoritesAndFetchThem() {
@@ -62,15 +58,13 @@ class ManageCoreDataTests: XCTestCase {
         let recipe1 = makeRecipe(label: label1)
         let recipe2 = makeRecipe(label: label2)
         
-        sut.addFavorite(recipe: recipe1) { favorite in
+        sut.addFavorite(recipe: recipe1)
             let savedToFavorite1 = sut.checkIfFavorite(recipeName: label1)
             XCTAssertTrue(savedToFavorite1)
-        }
         
-        sut.addFavorite(recipe: recipe2) { favorite in
+        sut.addFavorite(recipe: recipe2)
             let savedToFavorite2 = sut.checkIfFavorite(recipeName: label2)
             XCTAssertTrue(savedToFavorite2)
-        }
         
         sut.fetchFavorites { recipes in
             XCTAssertNotNil(recipes)
