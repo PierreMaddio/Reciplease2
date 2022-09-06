@@ -12,9 +12,9 @@ open class CoreDataStack {
     public static let modelName = "Reciplease2"
     
     public static let model: NSManagedObjectModel = {
-//        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else { return }
-        let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
+        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else { return NSManagedObjectModel() }
+        guard let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL) else { return NSManagedObjectModel() }
+        return managedObjectModel
     }()
     
     public init() {

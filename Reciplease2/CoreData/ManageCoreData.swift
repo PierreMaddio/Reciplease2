@@ -39,7 +39,7 @@ class ManageCoreData {
                 let recipeCD = Recipe(label: label,
                                       image: image,
                                       url: url,
-                                      yield:Int(yield)!,
+                                      yield:Int(yield) ?? 4,
                                       ingredientLines: ingredientLines,
                                       totalTime: Int(totalTime))
                 favoriteRecipes.append(recipeCD)
