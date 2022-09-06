@@ -11,13 +11,13 @@ class ApiService {
     static let appKey = "c4ed16eb0795215c47de2959c93d00c4"
     static let appID = "7d167a47"
     
-    private static let baseUrlApi = URL(string: "https://api.edamam.com/api/")
+    private static let baseUrlApi: URL? = URL(string: "https://api.edamam.com/api/")
     
     //MARK: - Methods Endpoint 1 List of ingredients
     
     static func completeUrlRequest(ingredients: [String]) ->
     URL {
-        guard let endpoint = URL(string: "recipes/v2/", relativeTo: baseUrlApi) else { return URL(fileURLWithPath: "") }
+        guard let endpoint = URL(string: "recipes/v2/", relativeTo: baseUrlApi) else { fatalError("Invalid URL") }
         
         var newQueryItems = [URLQueryItem]()
         newQueryItems.append(.init(name: "app_key", value: appKey))
@@ -25,7 +25,7 @@ class ApiService {
         newQueryItems.append(.init(name: "type", value: "any"))
         newQueryItems.append(.init(name: "q", value: ingredients.joined(separator: ",")))
         
-        guard var urlCom = URLComponents.init(string: endpoint.absoluteString) else { return URL(fileURLWithPath: "") }
+        guard var urlCom = URLComponents.init(string: endpoint.absoluteString) else { fatalError("Invalid URL") }
         urlCom.queryItems = newQueryItems
         return urlCom.url ?? URL(fileURLWithPath: "")
     }
