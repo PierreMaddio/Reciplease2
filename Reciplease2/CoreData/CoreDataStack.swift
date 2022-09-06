@@ -12,6 +12,7 @@ open class CoreDataStack {
     public static let modelName = "Reciplease2"
     
     public static let model: NSManagedObjectModel = {
+//        guard let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd") else { return }
         let modelURL = Bundle.main.url(forResource: modelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()

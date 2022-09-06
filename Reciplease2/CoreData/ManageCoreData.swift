@@ -63,8 +63,7 @@ class ManageCoreData {
     
     func addFavorite(recipe: Recipe) {
         let managedObjectContext = persistentContainer.viewContext
-        let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext)!
-        
+        guard let recipeEntity = NSEntityDescription.entity(forEntityName: "RecipleaseCoreData", in: managedObjectContext) else { return }
         let favoriteEntity = NSManagedObject(entity: recipeEntity, insertInto: managedObjectContext)
         favoriteEntity.setValue(recipe.image, forKey: "image")
         favoriteEntity.setValue(recipe.label, forKey: "label")
